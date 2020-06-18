@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.LoginPage"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx">
+<AbsoluteLayout>
+    <StackLayout
+        AbsoluteLayout.LayoutBounds="0.5, 0.15, 250, AutoSize"
+        AbsoluteLayout.LayoutFlags="PositionProportional">
+        <Image
+            x:Name="logoApp"
+            Source="logo_app"
+            WidthRequest="220"
+            />
+
+        <Label
+            x:Name="textLogin"
+            Text="{Static resources:AppResources.LoginStr}"
+            XAlign="Center"
+            TextColor="Black"
+            FontSize="30"
+            />
+
+        <Entry
+            WidthRequest="250"
+            Placeholder="{Static resources:AppResources.UsernameStr}"
+            />
+
+        <Entry
+            WidthRequest="250"
+            Placeholder="{Static resources:AppResources.PasswordStr}"
+            />
+
+        <Button
+            Margin="20, 5, 20, 0"
+            Text="{Static resources:AppResources.LoginStr}"
+            Style="{StaticResource buttonStyle}"
+            IsEnabled="False"
+            />
+
+        <Button
+            Margin="20, 5, 20, 0"
+            Text="{Static resources:AppResources.RegisterStr}"
+            BackgroundColor="Transparent"
+            Clicked="Button_Register_Clicked"/>
+    </StackLayout>
+</AbsoluteLayout>
+</ContentPage>

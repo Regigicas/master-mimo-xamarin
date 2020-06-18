@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.MainPage"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx">
+    <RelativeLayout>
+        <Image
+            x:Name="logoApp"
+            Source="logo_app"
+            WidthRequest="220"
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width}"
+            RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.215}"
+            />
+
+        <Label
+            Text="{Static resources:AppResources.LoadingStr}"
+            XAlign="Center"
+            TextColor="Black"
+            RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToView,
+                ElementName=logoApp,
+                Property=Y,
+                Factor=1,
+                Constant=240}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToView,
+                ElementName=logoApp,
+                Property=Width,
+                Factor=1}"
+            />
+    </RelativeLayout>
+</ContentPage>

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE6E1A0F-9D47-4C71-B689-AAB3B9677484}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GamesViewer_Xamarin.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>GamesViewer_Xamarin.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ProvisioningType>automatic</ProvisioningType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_android_dark.imageset\logo_android_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_android_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_xbox.imageset\logo_xbox.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_xbox.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_xbox_dark.imageset\logo_xbox_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_xbox_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_web.imageset\logo_web.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_web.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_web_dark.imageset\logo_web_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_web_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_ps.imageset\logo_ps.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_ps.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_sega_dark.imageset\logo_sega_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_sega_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_sega.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_sega.imageset\logo_sega.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_threedo_dark.imageset\logo_threedo_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_threedo_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_threedo.imageset\logo_ threedo.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_threedo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_ps_dark.imageset\logo_ps_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_ps_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_pc.imageset\logo_pc.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_pc.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_pc_dark.imageset\logo_pc_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_pc_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_nintendo.imageset\logo_nintendo.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_nintendo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_nintendo_dark.imageset\logo_nintendo_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_nintendo_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_atari.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_atari.imageset\logo_atari.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_commodore_dark.imageset\logo_commodore_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_commodore_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_android.imageset\logo_android.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_android.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_apple_dark.imageset\logo_apple_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_apple_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_commodore.imageset\logo_commodore.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_commodore.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_linux_dark.imageset\logo_linux_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_linux_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_atari_dark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_atari_dark.imageset\logo_atari_dark.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_apple.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_apple.imageset\logo_apple.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_linux.imageset\logo_linux.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_linux.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_android.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_android.imageset\logo_android_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_android.imageset\logo_android.png" />
+    <ImageAsset Include="Assets.xcassets\logo_android.imageset\logo_android_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\logo_apple_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\logo_apple.png" />
+    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\logo_apple_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\logo_atari_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\logo_atari_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\logo_atari.png" />
+    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\logo_commodore_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\logo_commodore.png" />
+    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\logo_commodore_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\logo_linux_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\logo_linux_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\logo_linux.png" />
+    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\logo_nintendo_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\logo_nintendo_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\logo_nintendo.png" />
+    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\logo_pc_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\logo_pc.png" />
+    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\logo_pc_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\logo_ps_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\logo_ps.png" />
+    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\logo_ps_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\logo_sega_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\logo_sega.png" />
+    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\logo_sega_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\logo_threedo_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\logo_threedo.png" />
+    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\logo_threedo_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_web.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_web.imageset\logo_web_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_web.imageset\logo_web_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo_web.imageset\logo_web.png" />
+    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\logo_xbox_dark.png" />
+    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\logo_xbox.png" />
+    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\logo_xbox_dark-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appstore.png" />
+    <ImageAsset Include="Assets.xcassets\placeholder_image.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\placeholder_image.imageset\gamepad_vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\GamesViewer_Xamarin\GamesViewer_Xamarin.csproj">
+      <Project>{EA4E5D37-98D0-41DD-BCC7-97A8E1B5E3B2}</Project>
+      <Name>GamesViewer_Xamarin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\logo_android.imageset\" />
+    <Folder Include="Assets.xcassets\logo_apple.imageset\" />
+    <Folder Include="Assets.xcassets\logo_atari.imageset\" />
+    <Folder Include="Assets.xcassets\logo_commodore.imageset\" />
+    <Folder Include="Assets.xcassets\logo_linux.imageset\" />
+    <Folder Include="Assets.xcassets\logo_nintendo.imageset\" />
+    <Folder Include="Assets.xcassets\logo_pc.imageset\" />
+    <Folder Include="Assets.xcassets\logo_ps.imageset\" />
+    <Folder Include="Assets.xcassets\logo_sega.imageset\" />
+    <Folder Include="Assets.xcassets\logo_threedo.imageset\" />
+    <Folder Include="Assets.xcassets\logo_web.imageset\" />
+    <Folder Include="Assets.xcassets\logo_xbox.imageset\" />
+    <Folder Include="Assets.xcassets\placeholder_image.imageset\" />
+  </ItemGroup>
+</Project>

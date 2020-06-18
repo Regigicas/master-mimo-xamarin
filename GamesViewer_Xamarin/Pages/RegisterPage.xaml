@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.RegisterPage"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx">
+    <StackLayout Margin="20, 20, 20, 20">
+        <Label Text="{Static resources:AppResources.UsernameRegister}"/>
+        <Entry Placeholder="{Static resources:AppResources.EnterUsername}"
+               ReturnType="Next"/>
+
+        <Label Text="{Static resources:AppResources.EmailRegister}"/>
+        <Entry Placeholder="{Static resources:AppResources.EnterEmail}"
+               ReturnType="Next"/>
+
+        <Label Text="{Static resources:AppResources.PasswordRegister}"/>
+        <Entry Placeholder="{Static resources:AppResources.EnterPassword}"
+               ReturnType="Next"/>
+
+        <Label Text="{Static resources:AppResources.RetypePasswordRegister}"/>
+        <Entry Placeholder="{Static resources:AppResources.EnterRetypePassword}"
+               ReturnType="Done"/>
+
+        <Button Text="{Static resources:AppResources.RegisterStr}"
+                WidthRequest="240"
+                Margin="50, 5, 50, 0"
+                IsEnabled="False"
+                Style="{StaticResource buttonStyle}"/>
+    </StackLayout>
+</ContentPage>
