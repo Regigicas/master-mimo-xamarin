@@ -1,12 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using GamesViewer_Xamarin.Models;
+﻿using System.Threading.Tasks;
 
 namespace GamesViewer_Xamarin.Interfaces
 {
     public interface IJuegoFavDataService
     {
-        Task<JuegoFavModel> GetJuegoFav(int id);
-        Task<bool> InsertJuegoFav(JuegoFavModel model);
+        Task<Models.JuegoFav> GetJuegoFav(int id);
+        Task<bool> InsertJuegoFav(Models.JuegoFav model);
     }
 }

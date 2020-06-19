@@ -2,13 +2,13 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using GamesViewer_Xamarin.Interfaces;
-using GamesViewer_Xamarin.Models;
 using SQLite;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(GamesViewer_Xamarin.Services.SQLiteJuegoFavService))]
 namespace GamesViewer_Xamarin.Services
 {
-    public class SQLiteJuegoFavService : IJuegoFavDataService
+    public class SQLiteJuegoFavService : Interfaces.IJuegoFavDataService
     {
         static SQLiteAsyncConnection connection;
         static bool wasInitialized = false;
@@ -25,19 +25,19 @@ namespace GamesViewer_Xamarin.Services
         {
             if (wasInitialized == false)
             {
-                if (connection.TableMappings.Any(t => t.MappedType.Name == typeof(JuegoFavModel).Name) == false)
-                    await connection.CreateTablesAsync(CreateFlags.None, typeof(JuegoFavModel)).ConfigureAwait(false);
+                if (connection.TableMappings.Any(t => t.MappedType.Name == typeof(Models.JuegoFav).Name) == false)
+                    await connection.CreateTablesAsync(CreateFlags.None, typeof(Models.JuegoFav)).ConfigureAwait(false);
 
                 wasInitialized = true;
             }
         }
 
-        public async Task<JuegoFavModel> GetJuegoFav(int id)
+        public async Task<Models.JuegoFav> GetJuegoFav(int id)
         {
-            return await connection.Table<JuegoFavModel>().Where(u => u.Id == id).FirstOrDefaultAsync();
+            return await connection.Table<Models.JuegoFav>().Where(u => u.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<bool> InsertJuegoFav(JuegoFavModel model)
+        public async Task<bool> InsertJuegoFav(Models.JuegoFav model)
         {
             if (await connection.UpdateAsync(model) > 0)
                 return true;

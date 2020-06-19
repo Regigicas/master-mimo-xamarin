@@ -1,27 +1,62 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.RegisterPage"
-             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx">
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             xmlns:behaviors="clr-namespace:GamesViewer_Xamarin.Behaviors"
+             Title="{Static resources:AppResources.RegisterTitle}">
     <StackLayout Margin="20, 20, 20, 20">
-        <Label Text="{Static resources:AppResources.UsernameRegister}"/>
-        <Entry Placeholder="{Static resources:AppResources.EnterUsername}"
-               ReturnType="Next"/>
+        <Label Text="{Static resources:AppResources.UsernameRegister}"
+               TextColor="Black"/>
+        <Entry x:Name="entryUsername"
+               Placeholder="{Static resources:AppResources.EnterUsername}"
+               ReturnType="Next"
+               Keyboard="Plain"
+               TextChanged="Entry_TextChanged"
+               Completed="Entry_Click_Next">
+                <Entry.Behaviors>
+                    <behaviors:MinMaxLengthBehavior MinValue="3" MaxValue="30"/>
+                </Entry.Behaviors>
+            </Entry>
 
-        <Label Text="{Static resources:AppResources.EmailRegister}"/>
-        <Entry Placeholder="{Static resources:AppResources.EnterEmail}"
-               ReturnType="Next"/>
+        <Label Text="{Static resources:AppResources.EmailRegister}"
+               TextColor="Black"/>
+        <Entry x:Name="entryEmail"
+               Placeholder="{Static resources:AppResources.EnterEmail}"
+               ReturnType="Next"
+               Keyboard="Email"
+               TextChanged="Entry_TextChanged"
+               Completed="Entry_Click_Next">
+                <Entry.Behaviors>
+                    <behaviors:ValidEmailBehavior/>
+                </Entry.Behaviors>
+            </Entry>
 
-        <Label Text="{Static resources:AppResources.PasswordRegister}"/>
-        <Entry Placeholder="{Static resources:AppResources.EnterPassword}"
-               ReturnType="Next"/>
+        <Label Text="{Static resources:AppResources.PasswordRegister}"
+               TextColor="Black"/>
+        <Entry x:Name="entryPassword"
+               Placeholder="{Static resources:AppResources.EnterPassword}"
+               ReturnType="Next"
+               Completed="Entry_Click_Next"
+               TextChanged="Entry_TextChanged"
+               IsPassword="True">
+                <Entry.Behaviors>
+                    <behaviors:MinMaxLengthBehavior MinValue="8" MaxValue="50"/>
+                </Entry.Behaviors>
+            </Entry>
 
-        <Label Text="{Static resources:AppResources.RetypePasswordRegister}"/>
-        <Entry Placeholder="{Static resources:AppResources.EnterRetypePassword}"
-               ReturnType="Done"/>
+        <Label Text="{Static resources:AppResources.RetypePasswordRegister}"
+               TextColor="Black"/>
+        <Entry x:Name="entryPasswordRetype"
+               Placeholder="{Static resources:AppResources.EnterRetypePassword}"
+               ReturnType="Done"
+               Completed="Entry_Click_Next"
+               TextChanged="Entry_TextChanged"
+               IsPassword="True"/>
 
         <Button Text="{Static resources:AppResources.RegisterStr}"
                 WidthRequest="240"
                 Margin="50, 5, 50, 0"
-                IsEnabled="False"
+                IsEnabled="{Binding EnableRegister}"
+                Clicked="Button_Register_Clicked"
                 Style="{StaticResource buttonStyle}"/>
     </StackLayout>
 </ContentPage>

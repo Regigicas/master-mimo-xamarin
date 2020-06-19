@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using GamesViewer_Xamarin.Interfaces;
-using GamesViewer_Xamarin.Models;
 using SQLite;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(GamesViewer_Xamarin.Services.SQLiteUsuarioJuegosService))]
 namespace GamesViewer_Xamarin.Services
 {
-    public class SQLiteUsuarioJuegosService : IUsuarioJuegosService
+    public class SQLiteUsuarioJuegosService : Interfaces.IUsuarioJuegosService
     {
         static SQLiteAsyncConnection connection;
         static bool wasInitialized = false;
@@ -27,32 +27,32 @@ namespace GamesViewer_Xamarin.Services
         {
             if (wasInitialized == false)
             {
-                if (connection.TableMappings.Any(t => t.MappedType.Name == typeof(UsuarioJuegosModel).Name) == false)
-                    await connection.CreateTablesAsync(CreateFlags.None, typeof(UsuarioJuegosModel)).ConfigureAwait(false);
+                if (connection.TableMappings.Any(t => t.MappedType.Name == typeof(Models.UsuarioJuegos).Name) == false)
+                    await connection.CreateTablesAsync(CreateFlags.None, typeof(Models.UsuarioJuegos)).ConfigureAwait(false);
 
                 wasInitialized = true;
             }
         }
 
-        public async Task<JuegoFavModel> GetJuegoFavByUserIdAndGameId(int userId, int gameId)
+        public async Task<Models.JuegoFav> GetJuegoFavByUserIdAndGameId(int userId, int gameId)
         {
-            var query = await connection.QueryAsync<JuegoFavModel>($@"SELECT id, name, backgroundImage, releaseDate FROM juegofav
+            var query = await connection.QueryAsync<Models.JuegoFav>($@"SELECT id, name, backgroundImage, releaseDate FROM juegofav
                INNER JOIN usuariosjuegos
                ON juegofav.id = usuariosjuegos.juegoId
                WHERE usuariosjuegos.usuarioId = {userId} AND usuariosJuegos.juegoId = {gameId})");
             return query.FirstOrDefault();
         }
 
-        public async Task<List<JuegoFavModel>> GetJuegoFavsByUserId(int userId)
+        public async Task<List<Models.JuegoFav>> GetJuegoFavsByUserId(int userId)
         {
-            var query = await connection.QueryAsync<JuegoFavModel>($@"SELECT id, name, backgroundImage, releaseDate FROM juegofav
+            var query = await connection.QueryAsync<Models.JuegoFav>($@"SELECT id, name, backgroundImage, releaseDate FROM juegofav
                INNER JOIN usuariosjuegos
                ON juegofav.id = usuariosjuegos.juegoId
                WHERE usuariosjuegos.usuarioId = {userId}");
             return query;
         }
 
-        public async Task<bool> InsertJuegoFav(UsuarioJuegosModel model)
+        public async Task<bool> InsertJuegoFav(Models.UsuarioJuegos model)
         {
             if (await connection.InsertAsync(model) > 0)
                 return true;
@@ -60,7 +60,7 @@ namespace GamesViewer_Xamarin.Services
             return false;
         }
 
-        public async Task<bool> DeleteByUserIdAndGameId(UsuarioJuegosModel model)
+        public async Task<bool> DeleteByUserIdAndGameId(Models.UsuarioJuegos model)
         {
             if (await connection.DeleteAsync(model) > 0)
                 return true;

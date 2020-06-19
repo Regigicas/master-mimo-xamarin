@@ -3,7 +3,7 @@ using SQLite;
 
 namespace GamesViewer_Xamarin.Models
 {
-    public class JuegoFavModel
+    public class JuegoFav
     {
         [PrimaryKey]
         public int Id { get; set; }

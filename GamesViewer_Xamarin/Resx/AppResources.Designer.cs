@@ -47,9 +47,9 @@ namespace GamesViewer_Xamarin.Resx {
             }
         }
         
-        internal static string HelloWorld {
+        internal static string AppName {
             get {
-                return ResourceManager.GetString("HelloWorld", resourceCulture);
+                return ResourceManager.GetString("AppName", resourceCulture);
             }
         }
         
@@ -62,6 +62,12 @@ namespace GamesViewer_Xamarin.Resx {
         internal static string LoadingStr {
             get {
                 return ResourceManager.GetString("LoadingStr", resourceCulture);
+            }
+        }
+        
+        internal static string LoadingTitle {
+            get {
+                return ResourceManager.GetString("LoadingTitle", resourceCulture);
             }
         }
         
@@ -134,6 +140,78 @@ namespace GamesViewer_Xamarin.Resx {
         internal static string EnterRetypePassword {
             get {
                 return ResourceManager.GetString("EnterRetypePassword", resourceCulture);
+            }
+        }
+        
+        internal static string RegisterTitle {
+            get {
+                return ResourceManager.GetString("RegisterTitle", resourceCulture);
+            }
+        }
+        
+        internal static string EnumExistingUser {
+            get {
+                return ResourceManager.GetString("EnumExistingUser", resourceCulture);
+            }
+        }
+        
+        internal static string EnumExistingEmail {
+            get {
+                return ResourceManager.GetString("EnumExistingEmail", resourceCulture);
+            }
+        }
+        
+        internal static string EnumInvalidEmail {
+            get {
+                return ResourceManager.GetString("EnumInvalidEmail", resourceCulture);
+            }
+        }
+        
+        internal static string EnumUsernameNotFound {
+            get {
+                return ResourceManager.GetString("EnumUsernameNotFound", resourceCulture);
+            }
+        }
+        
+        internal static string EnumPasswordMismatch {
+            get {
+                return ResourceManager.GetString("EnumPasswordMismatch", resourceCulture);
+            }
+        }
+        
+        internal static string EnumOldNewPasswordSame {
+            get {
+                return ResourceManager.GetString("EnumOldNewPasswordSame", resourceCulture);
+            }
+        }
+        
+        internal static string EnumInternalError {
+            get {
+                return ResourceManager.GetString("EnumInternalError", resourceCulture);
+            }
+        }
+        
+        internal static string EnumOK {
+            get {
+                return ResourceManager.GetString("EnumOK", resourceCulture);
+            }
+        }
+        
+        internal static string RegisterOkMsg {
+            get {
+                return ResourceManager.GetString("RegisterOkMsg", resourceCulture);
+            }
+        }
+        
+        internal static string NoAutologinSupport {
+            get {
+                return ResourceManager.GetString("NoAutologinSupport", resourceCulture);
+            }
+        }
+        
+        internal static string PlatformsTitle {
+            get {
+                return ResourceManager.GetString("PlatformsTitle", resourceCulture);
             }
         }
     }

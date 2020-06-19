@@ -68,6 +68,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Implementations\ToastServiceiOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -190,6 +191,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appstore.png" />
     <ImageAsset Include="Assets.xcassets\placeholder_image.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\placeholder_image.imageset\gamepad_vector.png" />
+    <ImageAsset Include="Assets.xcassets\home.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\home.imageset\home.png" />
+    <ImageAsset Include="Assets.xcassets\platform.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\platform.imageset\platform.png" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\search.png" />
+    <ImageAsset Include="Assets.xcassets\favorite.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\favorite.imageset\favorite.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -224,5 +233,10 @@
     <Folder Include="Assets.xcassets\logo_web.imageset\" />
     <Folder Include="Assets.xcassets\logo_xbox.imageset\" />
     <Folder Include="Assets.xcassets\placeholder_image.imageset\" />
+    <Folder Include="Implementations\" />
+    <Folder Include="Assets.xcassets\home.imageset\" />
+    <Folder Include="Assets.xcassets\platform.imageset\" />
+    <Folder Include="Assets.xcassets\search.imageset\" />
+    <Folder Include="Assets.xcassets\favorite.imageset\" />
   </ItemGroup>
 </Project>

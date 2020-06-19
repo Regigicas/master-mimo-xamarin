@@ -3,7 +3,7 @@ using SQLite;
 
 namespace GamesViewer_Xamarin.Models
 {
-    public class UsuarioModel
+    public class Usuario
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using GamesViewer_Xamarin.Controllers;
-using GamesViewer_Xamarin.Interfaces;
-using GamesViewer_Xamarin.Resx;
-using Refit;
+﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace GamesViewer_Xamarin.Pages
@@ -18,10 +13,11 @@ namespace GamesViewer_Xamarin.Pages
 
         private async void TryAutoLogin()
         {
-            var autoLoginOk = await UserController.tryAutoLogin();
+            var autoLoginOk = await Controllers.UserController.TryAutoLogin();
             if (autoLoginOk)
             {
-                // go home
+                await Task.Delay(1000);
+                Application.Current.MainPage = new NavigationPage(new HomePage());
                 return;
             }
 

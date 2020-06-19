@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using GamesViewer_Xamarin.Interfaces;
+﻿using System.Threading.Tasks;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(GamesViewer_Xamarin.Services.SecureStorage))]
 namespace GamesViewer_Xamarin.Services
 {
-    public class SecureStorage : ISecureStorage
+    public class SecureStorage : Interfaces.ISecureStorage
     {
         public async Task<string> GetPropertyAsync(string key)
         {
@@ -25,7 +25,7 @@ namespace GamesViewer_Xamarin.Services
                 await Xamarin.Essentials.SecureStorage.SetAsync(key, value);
                 return true;
             }
-            catch { }
+            catch {}
 
             return false;
         }

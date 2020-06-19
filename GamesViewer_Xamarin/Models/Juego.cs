@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace GamesViewer_Xamarin.Models
 {
-    public class JuegoModel
+    public class Juego
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,15 +13,15 @@ namespace GamesViewer_Xamarin.Models
         public string BackgroundImage { get; set; }
         public float Rating { get; set; }
         [JsonProperty(PropertyName = "platforms")]
-        private List<PlatformModel.PlatformsResponse> Platforms { get; set; }
+        private List<Platform.PlatformsResponse> Platforms { get; set; }
         public ClipModel Clip { get; set; }
 
         [JsonIgnore]
-        public List<PlatformModel> ParsedPlatforms
+        public List<Platform> ParsedPlatforms
         {
             get
             {
-                var values = new List<PlatformModel>();
+                var values = new List<Platform>();
                 if (Platforms != null)
                     foreach (var value in Platforms)
                         values.Add(value.Platform);
@@ -34,7 +33,7 @@ namespace GamesViewer_Xamarin.Models
 
         public class ResponseQuery
         {
-            public List<JuegoModel> Results { get; set; }
+            public List<Juego> Results { get; set; }
         }
 
         public class ClipModel

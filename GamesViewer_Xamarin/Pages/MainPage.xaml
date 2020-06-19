@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.MainPage"
-             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx">
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             Title="{Static resources:AppResources.LoadingTitle}">
     <RelativeLayout>
         <Image
             x:Name="logoApp"
