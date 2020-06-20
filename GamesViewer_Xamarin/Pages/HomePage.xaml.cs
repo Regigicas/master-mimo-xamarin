@@ -15,7 +15,8 @@ namespace GamesViewer_Xamarin.Pages
 
         void TabbedPage_CurrentPageChanged(object sender, System.EventArgs e)
         {
-            Title = CurrentPage.Title;
+            if (CurrentPage != null)
+                Title = CurrentPage.Title;
         }
     }
 }

@@ -9,9 +9,9 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             CurrentPageChanged="TabbedPage_CurrentPageChanged">
     <!--Pages can be added as references or inline-->
-    <NavigationPage Title="Tab 1">
+    <NavigationPage Title="Home">
         <x:Arguments>
-            <ContentPage Title="Tab 1"/>
+            <ContentPage Title="Home"/>
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="{Static resources:AppResources.PlatformsTitle}"
@@ -20,14 +20,19 @@
             <local:PlatformsPage/>
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Tab 3">
+    <NavigationPage Title="Search">
         <x:Arguments>
-            <ContentPage Title="Tab 3"/>
+            <ContentPage Title="Search"/>
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Tab 4">
+    <NavigationPage Title="Favorite">
         <x:Arguments>
-            <ContentPage Title="Tab 4"/>
+            <ContentPage Title="Favorite"/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="User">
+        <x:Arguments>
+            <ContentPage Title="User"/>
         </x:Arguments>
     </NavigationPage>
 </TabbedPage>

@@ -24,5 +24,23 @@ namespace GamesViewer_Xamarin.Misc
 
             return hash;
         }
+
+        public static string HtmlToPlainText(string html)
+        {
+            const string tagWhiteSpace = @"(>|$)(\W|\n|\r)+<";
+            const string stripFormatting = @"<[^>]*(>|$)";
+            const string lineBreak = @"<(br|BR)\s{0,1}\/{0,1}>";
+            var lineBreakRegex = new Regex(lineBreak, RegexOptions.Multiline);
+            var stripFormattingRegex = new Regex(stripFormatting, RegexOptions.Multiline);
+            var tagWhiteSpaceRegex = new Regex(tagWhiteSpace, RegexOptions.Multiline);
+
+            var text = html;
+            text = System.Net.WebUtility.HtmlDecode(text);
+            text = tagWhiteSpaceRegex.Replace(text, "><");
+            text = lineBreakRegex.Replace(text, Environment.NewLine);
+            text = stripFormattingRegex.Replace(text, string.Empty);
+
+            return text;
+        }
     }
 }

@@ -7,20 +7,27 @@ namespace GamesViewer_Xamarin.Pages
 {
     public partial class PlatformsPage : ContentPage
     {
-        private PlatformsPageViewModel viewModel = new PlatformsPageViewModel();
+        private PlatformsPageViewModel _viewModel = new PlatformsPageViewModel();
 
         public PlatformsPage()
         {
             InitializeComponent();
             LoadViewData();
-            BindingContext = viewModel;
+            BindingContext = _viewModel;
         }
 
         private async void LoadViewData()
         {
             var controller = Refit.RestService.For<Interfaces.IPlatformsRequest>(Resx.AppResources.ApiURL);
-            var result = await controller.GetPlatforms();
-            viewModel.Platforms = result.Results;
+            try
+            {
+                var result = await controller.GetPlatforms();
+                _viewModel.Platforms = result.Results;
+            }
+            catch
+            {
+                DependencyService.Get<Interfaces.IToastService>().SendToast(Resx.AppResources.RefitError);
+            }
         }
 
         void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -39,7 +39,7 @@ namespace GamesViewer_Xamarin.Services
 
         public async Task<bool> InsertJuegoFav(Models.JuegoFav model)
         {
-            if (await connection.UpdateAsync(model) > 0)
+            if (await connection.InsertAsync(model) > 0)
                 return true;
 
             return false;

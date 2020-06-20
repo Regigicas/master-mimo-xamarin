@@ -1,6 +1,38 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.PlatformInfo">
-    <AbsoluteLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.PlatformInfo"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             Title="{Binding Platform.Name, StringFormat={Static resources:AppResources.PlatformInfoTitle}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
 
-    </AbsoluteLayout>
+        <StackLayout Grid.Row="0">
+            <ffimageloading:CachedImage HeightRequest="320"
+                   Source="{Binding Platform.BackgroundImage}"
+                   LoadingPlaceholder="placeholder_image.png"
+                   ErrorPlaceholder="placeholder_image.png"
+                   Aspect="AspectFill"/>
+
+            <ScrollView VerticalOptions="FillAndExpand">
+                <Label Text="{Binding Platform.DescriptionWithPlaceholder}"
+                       TextType="Html"
+                       TextColor="Black"
+                       Margin="10, 0, 10, 10"
+                       x:Name="labelDesc"/>
+            </ScrollView>
+        </StackLayout>
+
+        <Button Grid.Row="1"
+                Text="{Static resources:AppResources.ViewPlatformGames}"
+                Margin="0, 0, 0, 10"
+                WidthRequest="240"
+                HeightRequest="50"
+                Style="{StaticResource buttonStyle}"
+                Clicked="Button_Games_Clicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"/>
+    </Grid>
 </ContentPage>

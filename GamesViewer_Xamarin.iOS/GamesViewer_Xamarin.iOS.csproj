@@ -123,54 +123,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_apple.imageset\logo_apple.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_linux.imageset\logo_linux.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_linux.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_android.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_android.imageset\logo_android_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_android.imageset\logo_android.png" />
-    <ImageAsset Include="Assets.xcassets\logo_android.imageset\logo_android_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\logo_apple_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\logo_apple.png" />
-    <ImageAsset Include="Assets.xcassets\logo_apple.imageset\logo_apple_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\logo_atari_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\logo_atari_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_atari.imageset\logo_atari.png" />
-    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\logo_commodore_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\logo_commodore.png" />
-    <ImageAsset Include="Assets.xcassets\logo_commodore.imageset\logo_commodore_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\logo_linux_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\logo_linux_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_linux.imageset\logo_linux.png" />
-    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\logo_nintendo_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\logo_nintendo_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_nintendo.imageset\logo_nintendo.png" />
-    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\logo_pc_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\logo_pc.png" />
-    <ImageAsset Include="Assets.xcassets\logo_pc.imageset\logo_pc_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\logo_ps_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\logo_ps.png" />
-    <ImageAsset Include="Assets.xcassets\logo_ps.imageset\logo_ps_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\logo_sega_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\logo_sega.png" />
-    <ImageAsset Include="Assets.xcassets\logo_sega.imageset\logo_sega_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\logo_threedo_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\logo_threedo.png" />
-    <ImageAsset Include="Assets.xcassets\logo_threedo.imageset\logo_threedo_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_web.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logo_web.imageset\logo_web_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_web.imageset\logo_web_dark-1.png" />
-    <ImageAsset Include="Assets.xcassets\logo_web.imageset\logo_web.png" />
-    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\logo_xbox_dark.png" />
-    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\logo_xbox.png" />
-    <ImageAsset Include="Assets.xcassets\logo_xbox.imageset\logo_xbox_dark-1.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58.png" />
@@ -189,16 +141,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appstore.png" />
-    <ImageAsset Include="Assets.xcassets\placeholder_image.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\placeholder_image.imageset\gamepad_vector.png" />
-    <ImageAsset Include="Assets.xcassets\home.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\home.imageset\home.png" />
-    <ImageAsset Include="Assets.xcassets\platform.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\platform.imageset\platform.png" />
-    <ImageAsset Include="Assets.xcassets\search.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\search.imageset\search.png" />
-    <ImageAsset Include="Assets.xcassets\favorite.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\favorite.imageset\favorite.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -211,6 +153,12 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -220,23 +168,58 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets.xcassets\logo_android.imageset\" />
-    <Folder Include="Assets.xcassets\logo_apple.imageset\" />
-    <Folder Include="Assets.xcassets\logo_atari.imageset\" />
-    <Folder Include="Assets.xcassets\logo_commodore.imageset\" />
-    <Folder Include="Assets.xcassets\logo_linux.imageset\" />
-    <Folder Include="Assets.xcassets\logo_nintendo.imageset\" />
-    <Folder Include="Assets.xcassets\logo_pc.imageset\" />
-    <Folder Include="Assets.xcassets\logo_ps.imageset\" />
-    <Folder Include="Assets.xcassets\logo_sega.imageset\" />
-    <Folder Include="Assets.xcassets\logo_threedo.imageset\" />
-    <Folder Include="Assets.xcassets\logo_web.imageset\" />
-    <Folder Include="Assets.xcassets\logo_xbox.imageset\" />
-    <Folder Include="Assets.xcassets\placeholder_image.imageset\" />
     <Folder Include="Implementations\" />
-    <Folder Include="Assets.xcassets\home.imageset\" />
-    <Folder Include="Assets.xcassets\platform.imageset\" />
-    <Folder Include="Assets.xcassets\search.imageset\" />
-    <Folder Include="Assets.xcassets\favorite.imageset\" />
+    <Folder Include="Assets.xcassets\favorite.png.imageset\" />
+    <Folder Include="Assets.xcassets\home.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_android_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_apple_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_atari_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_commodore_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_linux_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_nintendo_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_pc_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_ps_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_sega_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_threedo_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_web_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\logo_xbox_dark.png.imageset\" />
+    <Folder Include="Assets.xcassets\placeholder_image.png.imageset\" />
+    <Folder Include="Assets.xcassets\platform.png.imageset\" />
+    <Folder Include="Assets.xcassets\search.png.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favorite.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\logo_android_dark.png" />
+    <BundleResource Include="Resources\logo_android.png" />
+    <BundleResource Include="Resources\logo_app.png" />
+    <BundleResource Include="Resources\logo_apple_dark.png" />
+    <BundleResource Include="Resources\logo_apple.png" />
+    <BundleResource Include="Resources\logo_atari_dark.png" />
+    <BundleResource Include="Resources\logo_atari.png" />
+    <BundleResource Include="Resources\logo_commodore_dark.png" />
+    <BundleResource Include="Resources\logo_commodore.png" />
+    <BundleResource Include="Resources\logo_linux_dark.png" />
+    <BundleResource Include="Resources\logo_linux.png" />
+    <BundleResource Include="Resources\logo_nintendo_dark.png" />
+    <BundleResource Include="Resources\logo_nintendo.png" />
+    <BundleResource Include="Resources\logo_pc_dark.png" />
+    <BundleResource Include="Resources\logo_pc.png" />
+    <BundleResource Include="Resources\logo_ps_dark.png" />
+    <BundleResource Include="Resources\logo_ps.png" />
+    <BundleResource Include="Resources\logo_sega_dark.png" />
+    <BundleResource Include="Resources\logo_sega.png" />
+    <BundleResource Include="Resources\logo_threedo_dark.png" />
+    <BundleResource Include="Resources\logo_threedo.png" />
+    <BundleResource Include="Resources\logo_web_dark.png" />
+    <BundleResource Include="Resources\logo_web.png" />
+    <BundleResource Include="Resources\logo_xbox_dark.png" />
+    <BundleResource Include="Resources\logo_xbox.png" />
+    <BundleResource Include="Resources\placeholder_image.png" />
+    <BundleResource Include="Resources\platform.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\fav_status_off.png" />
+    <BundleResource Include="Resources\fav_status_on.png" />
+    <BundleResource Include="Resources\qr_icon.png" />
   </ItemGroup>
 </Project>

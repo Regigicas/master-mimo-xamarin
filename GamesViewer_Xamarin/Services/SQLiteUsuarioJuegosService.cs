@@ -34,22 +34,14 @@ namespace GamesViewer_Xamarin.Services
             }
         }
 
-        public async Task<Models.JuegoFav> GetJuegoFavByUserIdAndGameId(int userId, int gameId)
+        public async Task<Models.UsuarioJuegos> GetJuegoFavByUserIdAndGameId(int userId, int gameId)
         {
-            var query = await connection.QueryAsync<Models.JuegoFav>($@"SELECT id, name, backgroundImage, releaseDate FROM juegofav
-               INNER JOIN usuariosjuegos
-               ON juegofav.id = usuariosjuegos.juegoId
-               WHERE usuariosjuegos.usuarioId = {userId} AND usuariosJuegos.juegoId = {gameId})");
-            return query.FirstOrDefault();
+            return await connection.Table<Models.UsuarioJuegos>().Where(u => u.UsuarioId == userId && u.JuegoId == gameId).FirstOrDefaultAsync();
         }
 
-        public async Task<List<Models.JuegoFav>> GetJuegoFavsByUserId(int userId)
+        public async Task<List<Models.UsuarioJuegos>> GetJuegoFavsByUserId(int userId)
         {
-            var query = await connection.QueryAsync<Models.JuegoFav>($@"SELECT id, name, backgroundImage, releaseDate FROM juegofav
-               INNER JOIN usuariosjuegos
-               ON juegofav.id = usuariosjuegos.juegoId
-               WHERE usuariosjuegos.usuarioId = {userId}");
-            return query;
+            return await connection.Table<Models.UsuarioJuegos>().Where(u => u.UsuarioId == userId).ToListAsync();
         }
 
         public async Task<bool> InsertJuegoFav(Models.UsuarioJuegos model)
@@ -62,7 +54,7 @@ namespace GamesViewer_Xamarin.Services
 
         public async Task<bool> DeleteByUserIdAndGameId(Models.UsuarioJuegos model)
         {
-            if (await connection.DeleteAsync(model) > 0)
+            if (await connection.Table<Models.UsuarioJuegos>().Where(x => x.JuegoId == model.JuegoId).DeleteAsync() > 0)
                 return true;
 
             return false;

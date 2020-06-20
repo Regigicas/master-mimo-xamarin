@@ -14,7 +14,15 @@ namespace GamesViewer_Xamarin.Models
         public float Rating { get; set; }
         [JsonProperty(PropertyName = "platforms")]
         private List<Platform.PlatformsResponse> Platforms { get; set; }
-        public ClipModel Clip { get; set; }
+        [JsonIgnore]
+        public string DescriptionWithPlaceholder
+        {
+            get
+            {
+                return string.IsNullOrEmpty(Description) ? Resx.AppResources.NoDescription : Description;
+            }
+            set { }
+        }
 
         [JsonIgnore]
         public List<Platform> ParsedPlatforms
@@ -36,53 +44,46 @@ namespace GamesViewer_Xamarin.Models
             public List<Juego> Results { get; set; }
         }
 
-        public class ClipModel
+        public string BackgroundString
         {
-            [JsonProperty(PropertyName = "clips")]
-            public ClipsModel Clips { get; set; }
-
-            public class ClipsModel
+            get
             {
-                [JsonProperty(PropertyName = "320")]
-                public string P320 { get; set; }
-                [JsonProperty(PropertyName = "640")]
-                public string P640 { get; set; }
-                public string Full { get; set; }
+                if (string.IsNullOrEmpty(BackgroundImage))
+                    return "placeholder_image";
+
+                var splits = BackgroundImage.Split('/');
+                var url1 = splits[splits.Length - 1];
+                var url2 = splits[splits.Length - 2];
+                var url3 = splits[splits.Length - 3];
+                var backgroundUrl = $"https://api.rawg.io/media/crop/600/400/{url3}/{url2}/{url1}";
+                return backgroundUrl;
             }
+            set {}
         }
 
-        public string GetBackgroundString()
+        public string PlatformString
         {
-            if (string.IsNullOrEmpty(BackgroundImage))
-                return "placeholder_image";
-
-            var splits = BackgroundImage.Split('/');
-            var url1 = splits[splits.Length - 1];
-            var url2 = splits[splits.Length - 2];
-            var url3 = splits[splits.Length - 3];
-            var backgroundUrl = $"https://api.rawg.io/media/crop/600/400/{url3}/{url2}/{url1}";
-            return backgroundUrl;
-        }
-
-        string GetPlatformString()
-        {
-            var platforms = "Ninguna";
-            var first = true;
-            if (Platforms != null)
+            get
             {
-                foreach (var plat in ParsedPlatforms)
+                var platforms = "Ninguna";
+                var first = true;
+                if (Platforms != null)
                 {
-                    if (first)
+                    foreach (var plat in ParsedPlatforms)
                     {
-                        first = false;
-                        platforms = plat.Name;
+                        if (first)
+                        {
+                            first = false;
+                            platforms = plat.Name;
+                        }
+                        else
+                            platforms += $" | {plat.Name}";
                     }
-                    else
-                        platforms += $" | {plat.Name}";
                 }
-            }
 
-            return platforms;
+                return platforms;
+            }
+            set {}
         }
     }
 }

@@ -1,7 +1,5 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using Xamarin.Forms;
 
 namespace GamesViewer_Xamarin.Models
 {
@@ -10,8 +8,17 @@ namespace GamesViewer_Xamarin.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        [JsonProperty(PropertyName = "background_image")]
+        [JsonProperty(PropertyName = "image_background")]
         public string BackgroundImage { get; set; }
+        [JsonIgnore]
+        public string DescriptionWithPlaceholder
+        {
+            get
+            {
+                return string.IsNullOrEmpty(Description) ? Resx.AppResources.NoDescription : Description;
+            }
+            set {}
+        }
 
         public class PlatformsResponse
         {

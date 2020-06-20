@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.GameInfo"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             Title="{Binding Juego.Name, StringFormat={Static resources:AppResources.GameInfoTitle}}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="qr_icon.png" Clicked="ToolbarItem_Clicked_QR" Priority="0"/>
+        <ToolbarItem IconImageSource="{Binding FavIcon}" Clicked="ToolbarItem_Clicked" Priority="1"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <ffimageloading:CachedImage HeightRequest="320"
+                Source="{Binding Juego.BackgroundString}"
+                LoadingPlaceholder="placeholder_image.png"
+                ErrorPlaceholder="placeholder_image.png"
+                Aspect="AspectFill"/>
+
+        <Label Text="{Static resources:AppResources.AvailableInfo}"
+               TextColor="Black"
+               Margin="10, 0, 10, 0"
+               FontAttributes="Bold"/>
+        <Label Text="{Binding Juego.PlatformString}"
+               MaxLines="3"
+               TextColor="Black"
+               Margin="10, 0, 10, 0"/>
+
+        <StackLayout Orientation="Horizontal" Margin="10, 0, 10, 0">
+            <Label Text="{Static resources:AppResources.RatingInfo}"
+                   TextColor="Black"/>
+            <Label Text="{Binding Juego.Rating}"
+                   TextColor="Black"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="10, 0, 10, 0">
+            <Label Text="{Static resources:AppResources.ReleaseDateInfo}"
+                   TextColor="Black"/>
+            <Label Text="{Binding Juego.Released}"
+                   TextColor="Black"/>
+        </StackLayout>
+
+        <Label Text="{Static resources:AppResources.DescriptionInfo}"
+               TextColor="Black"
+               Margin="10, 0, 10, 0"/>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <Label Text="{Binding Juego.DescriptionWithPlaceholder}"
+                    TextType="Html"
+                    TextColor="Black"
+                    Margin="10, 0, 10, 10"
+                    x:Name="labelDesc"/>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

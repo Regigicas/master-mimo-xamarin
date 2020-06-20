@@ -5,8 +5,8 @@ namespace GamesViewer_Xamarin.Interfaces
 {
     public interface IUsuarioJuegosService
     {
-        Task<List<Models.JuegoFav>> GetJuegoFavsByUserId(int userId);
-        Task<Models.JuegoFav> GetJuegoFavByUserIdAndGameId(int userId, int gameId);
+        Task<List<Models.UsuarioJuegos>> GetJuegoFavsByUserId(int userId);
+        Task<Models.UsuarioJuegos> GetJuegoFavByUserIdAndGameId(int userId, int gameId);
         Task<bool> InsertJuegoFav(Models.UsuarioJuegos model);
         Task<bool> DeleteByUserIdAndGameId(Models.UsuarioJuegos model);
     }

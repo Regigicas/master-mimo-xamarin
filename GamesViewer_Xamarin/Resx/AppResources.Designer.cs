@@ -214,5 +214,65 @@ namespace GamesViewer_Xamarin.Resx {
                 return ResourceManager.GetString("PlatformsTitle", resourceCulture);
             }
         }
+        
+        internal static string PlatformInfoTitle {
+            get {
+                return ResourceManager.GetString("PlatformInfoTitle", resourceCulture);
+            }
+        }
+        
+        internal static string NoDescription {
+            get {
+                return ResourceManager.GetString("NoDescription", resourceCulture);
+            }
+        }
+        
+        internal static string ViewPlatformGames {
+            get {
+                return ResourceManager.GetString("ViewPlatformGames", resourceCulture);
+            }
+        }
+        
+        internal static string PlatformGamesListTitle {
+            get {
+                return ResourceManager.GetString("PlatformGamesListTitle", resourceCulture);
+            }
+        }
+        
+        internal static string RefitError {
+            get {
+                return ResourceManager.GetString("RefitError", resourceCulture);
+            }
+        }
+        
+        internal static string GameInfoTitle {
+            get {
+                return ResourceManager.GetString("GameInfoTitle", resourceCulture);
+            }
+        }
+        
+        internal static string AvailableInfo {
+            get {
+                return ResourceManager.GetString("AvailableInfo", resourceCulture);
+            }
+        }
+        
+        internal static string RatingInfo {
+            get {
+                return ResourceManager.GetString("RatingInfo", resourceCulture);
+            }
+        }
+        
+        internal static string ReleaseDateInfo {
+            get {
+                return ResourceManager.GetString("ReleaseDateInfo", resourceCulture);
+            }
+        }
+        
+        internal static string DescriptionInfo {
+            get {
+                return ResourceManager.GetString("DescriptionInfo", resourceCulture);
+            }
+        }
     }
 }

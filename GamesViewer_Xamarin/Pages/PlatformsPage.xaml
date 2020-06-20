@@ -3,27 +3,26 @@
              xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
              Title="{Static resources:AppResources.PlatformsTitle}"
              IconImageSource="platform.png">
-    <StackLayout>
-        <ListView ItemsSource="{Binding Platforms}"
-                  RowHeight="44"
-                  ItemSelected="ListView_ItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Margin="4, 4, 4, 4">
-                            <StackLayout WidthRequest="44"
-                                   HeightRequest="44">
-                            <Image Aspect="AspectFit"
-                                   Source="{Binding ImgFile}"
-                                   VerticalOptions="CenterAndExpand"/>
-                            </StackLayout>
-                            <Label Text="{Binding Name}"
-                                   YAlign="Center"
-                                   TextColor="Black"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+    <ListView ItemsSource="{Binding Platforms}"
+                RowHeight="44"
+                HasUnevenRows="False"
+                CachingStrategy="RecycleElement"
+                ItemSelected="ListView_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="4, 4, 4, 4">
+                        <Image Source="{Binding ImgFile}"
+                                WidthRequest="44"
+                                HeightRequest="16"
+                                VerticalOptions="CenterAndExpand"
+                                Aspect="AspectFit"/>
+                        <Label Text="{Binding Name}"
+                                YAlign="Center"
+                                TextColor="Black"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

@@ -85,5 +85,71 @@ namespace GamesViewer_Xamarin.Controllers
         {
             Preferences.Set(ActiveUserId, id);
         }
+
+        public static async Task<Models.Usuario> GetUsuarioActivo()
+        {
+            int userId = Preferences.Get(ActiveUserId, -1);
+            if (userId == -1)
+                return null;
+
+            var usuarioDB = DependencyService.Get<Interfaces.IUserDataService>();
+            return await usuarioDB.GetUser(userId);
+        }
+
+        public static async Task<bool> HasFavorite(int juegoId, Models.Usuario usuarioActivo)
+        {
+            if (usuarioActivo == null)
+                usuarioActivo = await GetUsuarioActivo();
+            if (usuarioActivo == null)
+                return false;
+
+            var userFavsDB = DependencyService.Get<Interfaces.IUsuarioJuegosService>();
+            var result = await userFavsDB.GetJuegoFavByUserIdAndGameId(usuarioActivo.Id, juegoId);
+            return result != null;
+        }
+
+        public static async void AddFavorite(Models.Juego juego)
+        {
+            var usuarioActivo = await GetUsuarioActivo();
+            if (usuarioActivo == null)
+                return;
+
+            if (await HasFavorite(juego.Id, usuarioActivo))
+                return;
+
+            var juegoFav = await JuegoController.GetJuegoFav(juego.Id);
+            if (juegoFav == null)
+                juegoFav = await JuegoController.InsertJuegoFav(juego);
+            if (juegoFav == null)
+                return;
+
+            var userJuego = new Models.UsuarioJuegos()
+            {
+                UsuarioId = usuarioActivo.Id,
+                JuegoId = juegoFav.Id
+            };
+
+            var userFavsDB = DependencyService.Get<Interfaces.IUsuarioJuegosService>();
+            await userFavsDB.InsertJuegoFav(userJuego);
+        }
+
+        public static async void RemoveFavorite(int juegoId)
+        {
+            var usuarioActivo = await GetUsuarioActivo();
+            if (usuarioActivo == null)
+                return;
+
+            if (!await HasFavorite(juegoId, usuarioActivo))
+                return;
+
+            var userJuego = new Models.UsuarioJuegos()
+            {
+                UsuarioId = usuarioActivo.Id,
+                JuegoId = juegoId
+            };
+
+            var userFavsDB = DependencyService.Get<Interfaces.IUsuarioJuegosService>();
+            await userFavsDB.DeleteByUserIdAndGameId(userJuego);
+        }
     }
 }

@@ -5,14 +5,14 @@ namespace GamesViewer_Xamarin.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        private LoginPageViewModel viewModel = new LoginPageViewModel();
+        private LoginPageViewModel _viewModel = new LoginPageViewModel();
         private bool BlockLogin { get; set; }
 
         public LoginPage()
         {
             InitializeComponent();
-            viewModel.EnableLogin = false;
-            BindingContext = viewModel;
+            _viewModel.EnableLogin = false;
+            BindingContext = _viewModel;
         }
 
         void Button_Register_Clicked(object sender, System.EventArgs e)
@@ -69,7 +69,7 @@ namespace GamesViewer_Xamarin.Pages
             if (string.IsNullOrEmpty(entryPassword.Text) || entryPassword.Text.Length < 8)
                 canEnable = false;
 
-            viewModel.EnableLogin = canEnable;
+            _viewModel.EnableLogin = canEnable;
             return canEnable;
         }
     }

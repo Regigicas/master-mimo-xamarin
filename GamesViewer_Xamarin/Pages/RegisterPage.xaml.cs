@@ -9,16 +9,16 @@ namespace GamesViewer_Xamarin.Pages
 {
     public partial class RegisterPage : ContentPage, INotifyPropertyChanged
     {
-        private Dictionary<VisualElement, VisualElement> completedNext;
-        private RegisterPageViewModel viewModel = new RegisterPageViewModel();
+        private Dictionary<VisualElement, VisualElement> _completedNext;
+        private RegisterPageViewModel _viewModel = new RegisterPageViewModel();
         private bool BlockRegister { get; set; }
 
         public RegisterPage()
         {
             InitializeComponent();
-            viewModel.EnableRegister = false;
-            BindingContext = viewModel;
-            completedNext = new Dictionary<VisualElement, VisualElement>
+            _viewModel.EnableRegister = false;
+            BindingContext = _viewModel;
+            _completedNext = new Dictionary<VisualElement, VisualElement>
             {
                 { entryUsername,       entryEmail },
                 { entryEmail,          entryPassword },
@@ -35,7 +35,7 @@ namespace GamesViewer_Xamarin.Pages
 
         void Entry_Click_Next(object sender, System.EventArgs e)
         {
-            completedNext.TryGetValue(sender as VisualElement, out VisualElement nextFocus);
+            _completedNext.TryGetValue(sender as VisualElement, out VisualElement nextFocus);
             if (nextFocus != null)
                 nextFocus.Focus();
             else if (UpdateRegisterButton())
@@ -77,7 +77,7 @@ namespace GamesViewer_Xamarin.Pages
             if (entryPassword.Text != entryPasswordRetype.Text)
                 canEnable = false;
 
-            viewModel.EnableRegister = canEnable;
+            _viewModel.EnableRegister = canEnable;
             return canEnable;
         }
 
