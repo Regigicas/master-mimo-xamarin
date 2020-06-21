@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -12,11 +11,15 @@ namespace GamesViewer_Xamarin.Pages
             InitializeComponent();
         }
 
-        void ListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
         }
 
-        void ListView_ItemAppearing(System.Object sender, Xamarin.Forms.ItemVisibilityEventArgs e)
+        void ListView_ItemAppearing(object sender, ItemVisibilityEventArgs e)
+        {
+        }
+
+        void SearchBar_SearchButtonPressed(object sender, EventArgs e)
         {
         }
     }

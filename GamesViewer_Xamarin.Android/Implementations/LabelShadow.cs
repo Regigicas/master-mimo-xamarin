@@ -11,21 +11,21 @@ namespace GamesViewer_Xamarin.Droid.Implementations
     {
         protected override void OnAttached()
         {
-			try
-			{
-				var control = Control as Android.Widget.TextView;
-				var effect = (ShadowEffect)Element.Effects.FirstOrDefault(e => e is ShadowEffect);
-				if (effect != null)
-				{
-					float radius = effect.Radius;
-					float distanceX = effect.DistanceX;
-					float distanceY = effect.DistanceY;
-					Android.Graphics.Color color = effect.Color.ToAndroid();
-					control.SetShadowLayer(radius, distanceX, distanceY, color);
-				}
-			}
-			catch {}
-		}
+            try
+            {
+                var control = Control as Android.Widget.TextView;
+                var effect = (ShadowEffect)Element.Effects.FirstOrDefault(e => e is ShadowEffect);
+                if (effect != null)
+                {
+                    float radius = effect.Radius;
+                    float distanceX = effect.DistanceX;
+                    float distanceY = effect.DistanceY;
+                    Android.Graphics.Color color = effect.Color.ToAndroid();
+                    control.SetShadowLayer(radius, distanceX, distanceY, color);
+                }
+            }
+            catch {}
+        }
 
         protected override void OnDetached()
         {

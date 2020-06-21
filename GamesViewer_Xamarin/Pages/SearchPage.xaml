@@ -7,6 +7,7 @@
              IconImageSource="search.png">
     <StackLayout>
         <SearchBar Placeholder="{Static resources:AppResources.InputGame}"
+                   SearchButtonPressed="SearchBar_SearchButtonPressed"
                    Keyboard="Plain"/>
         <ListView ItemsSource="{Binding Juegos}"
                   RowHeight="95"
