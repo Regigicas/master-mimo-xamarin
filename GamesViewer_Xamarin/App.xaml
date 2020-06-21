@@ -16,6 +16,10 @@
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="#7019BE"/>
                 <Setter Property="BarTextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="White"/>
             </Style>
             <Color x:Key="colorPurple">#7019BE</Color>
         </ResourceDictionary>

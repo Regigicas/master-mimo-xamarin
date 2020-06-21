@@ -17,6 +17,10 @@ namespace GamesViewer_Xamarin.Pages
         {
             if (CurrentPage != null)
                 Title = CurrentPage.Title;
+
+            if (CurrentPage is NavigationPage navPage)
+                if (navPage.CurrentPage is FavoritePage page)
+                    page.ReloadFavData();
         }
     }
 }

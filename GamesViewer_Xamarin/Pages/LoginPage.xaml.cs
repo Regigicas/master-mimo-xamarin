@@ -72,21 +72,21 @@ namespace GamesViewer_Xamarin.Pages
             _viewModel.EnableLogin = canEnable;
             return canEnable;
         }
-    }
 
-    internal class LoginPageViewModel : BindableObject
-    {
-        private bool _enableLogin;
-        public bool EnableLogin
+        internal class LoginPageViewModel : BindableObject
         {
-            get
+            private bool _enableLogin;
+            public bool EnableLogin
             {
-                return _enableLogin;
-            }
-            set
-            {
-                _enableLogin = value;
-                OnPropertyChanged();
+                get
+                {
+                    return _enableLogin;
+                }
+                set
+                {
+                    _enableLogin = value;
+                    OnPropertyChanged();
+                }
             }
         }
     }

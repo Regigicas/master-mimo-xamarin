@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.SearchPage"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             Title="{Static resources:AppResources.SearchTitle}"
+             IconImageSource="search.png">
+    <StackLayout>
+        <SearchBar Placeholder="{Static resources:AppResources.InputGame}"
+                   Keyboard="Plain"/>
+        <ListView ItemsSource="{Binding Juegos}"
+                  RowHeight="95"
+                  CachingStrategy="RecycleElement"
+                  HasUnevenRows="False"
+                  IsPullToRefreshEnabled="True"
+                  RefreshCommand="{Binding RefreshCommand}"
+                  IsRefreshing="{Binding IsRefreshing}"
+                  ItemAppearing="ListView_ItemAppearing"
+                  ItemSelected="ListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <AbsoluteLayout>
+                            <AbsoluteLayout Padding="5, 5, 0, 5">
+                                <ffimageloading:CachedImage Source="{Binding BackgroundImage, Mode=OneTime}"
+                                        WidthRequest="85"
+                                        HeightRequest="85"
+                                        VerticalOptions="CenterAndExpand"
+                                        Aspect="AspectFill">
+                                        <ffimageloading:CachedImage.Transformations>
+                                            <fftransformations:CircleTransformation/>
+                                        </ffimageloading:CachedImage.Transformations>
+                                    </ffimageloading:CachedImage>
+                            </AbsoluteLayout>
+                            <Label Text="{Binding Name}"
+                                   MaxLines="3"
+                                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                                   AbsoluteLayout.LayoutBounds="0.55, 0.5, 200, AutoSize"
+                                   TextColor="Black"/>
+                            <Label Text="{Binding Released}"
+                                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                                   AbsoluteLayout.LayoutBounds="0.95, 0.5, AutoSize, AutoSize"
+                                   TextColor="Black"/>
+                        </AbsoluteLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

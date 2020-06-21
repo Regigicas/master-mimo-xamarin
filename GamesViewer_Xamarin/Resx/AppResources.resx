@@ -164,4 +164,16 @@
     <data name="DescriptionInfo" xml:space="preserve">
         <value>Description: </value>
     </data>
+    
+    <data name="FavoritesTitle" xml:space="preserve">
+        <value>Favorites</value>
+    </data>
+    
+    <data name="SearchTitle" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    
+    <data name="InputGame" xml:space="preserve">
+        <value>Input game name</value>
+    </data>
 </root>

@@ -88,71 +88,71 @@ namespace GamesViewer_Xamarin.Pages
                 _viewModel.IsRefreshing = false;
             }
         }
-    }
 
-    internal class PlatformGameListViewModel : BindableObject
-    {
-        private PlatformGameList _owner;
-        public ICommand RefreshCommand { get; private set; }
-        private ObservableCollection<Models.Juego> _juegos = new ObservableCollection<Models.Juego>();
-        public ObservableCollection<Models.Juego> Juegos
+        internal class PlatformGameListViewModel : BindableObject
         {
-            get
+            private PlatformGameList _owner;
+            public ICommand RefreshCommand { get; private set; }
+            private ObservableCollection<Models.Juego> _juegos = new ObservableCollection<Models.Juego>();
+            public ObservableCollection<Models.Juego> Juegos
             {
-                return _juegos;
+                get
+                {
+                    return _juegos;
+                }
+                set { }
             }
-            set {}
-        }
 
-        private Models.Platform _platform;
-        public Models.Platform Platform
-        {
-            get
+            private Models.Platform _platform;
+            public Models.Platform Platform
             {
-                return _platform;
+                get
+                {
+                    return _platform;
+                }
+                set
+                {
+                    _platform = value;
+                    OnPropertyChanged();
+                }
             }
-            set
-            {
-                _platform = value;
-                OnPropertyChanged();
-            }
-        }
 
-        private bool _isRefreshing;
-        public bool IsRefreshing
-        {
-            get
+            private bool _isRefreshing;
+            public bool IsRefreshing
             {
-                return _isRefreshing;
+                get
+                {
+                    return _isRefreshing;
+                }
+                set
+                {
+                    _isRefreshing = value;
+                    OnPropertyChanged();
+                }
             }
-            set
-            {
-                _isRefreshing = value;
-                OnPropertyChanged();
-            }
-        }
 
-        public PlatformGameListViewModel(PlatformGameList owner)
-        {
-            _owner = owner;
-            IsRefreshing = false;
-            RefreshCommand = new Command(async () =>
+            public PlatformGameListViewModel(PlatformGameList owner)
             {
-                IsRefreshing = true;
-                await _owner.PopulateData(false);
+                _owner = owner;
                 IsRefreshing = false;
-            });
-        }
+                RefreshCommand = new Command(async () =>
+                {
+                    IsRefreshing = true;
+                    await _owner.PopulateData(false);
+                    IsRefreshing = false;
+                });
+            }
 
-        public void AddGame(Models.Juego model)
-        {
-            _juegos.Add(model);
-        }
+            public void AddGame(Models.Juego model)
+            {
+                _juegos.Add(model);
+            }
 
-        public void AddAll(List<Models.Juego> juegos)
-        {
-            foreach (var juego in juegos)
-                _juegos.Add(juego);
+            public void AddAll(List<Models.Juego> juegos)
+            {
+                foreach (var juego in juegos)
+                    _juegos.Add(juego);
+            }
         }
     }
 }

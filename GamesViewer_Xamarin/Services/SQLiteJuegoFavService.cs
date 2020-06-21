@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,6 +44,19 @@ namespace GamesViewer_Xamarin.Services
                 return true;
 
             return false;
+        }
+
+        public async Task<List<Models.JuegoFav>> GetJuegosFavByList(List<int> ids)
+        {
+            var idsStr = (string)null;
+            foreach (var id in ids)
+            {
+                if (string.IsNullOrEmpty(idsStr))
+                    idsStr = id.ToString();
+                else
+                    idsStr += $", {id}";
+            }
+            return await connection.QueryAsync<Models.JuegoFav>($"SELECT * FROM JuegoFav WHERE Id IN ({idsStr})");
         }
     }
 }

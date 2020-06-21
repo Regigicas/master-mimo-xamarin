@@ -85,21 +85,21 @@ namespace GamesViewer_Xamarin.Pages
         {
             UpdateRegisterButton();
         }
-    }
 
-    internal class RegisterPageViewModel : BindableObject
-    {
-        private bool _enableRegister;
-        public bool EnableRegister
+        internal class RegisterPageViewModel : BindableObject
         {
-            get
+            private bool _enableRegister;
+            public bool EnableRegister
             {
-                return _enableRegister;
-            }
-            set
-            {
-                _enableRegister = value;
-                OnPropertyChanged();
+                get
+                {
+                    return _enableRegister;
+                }
+                set
+                {
+                    _enableRegister = value;
+                    OnPropertyChanged();
+                }
             }
         }
     }

@@ -274,5 +274,23 @@ namespace GamesViewer_Xamarin.Resx {
                 return ResourceManager.GetString("DescriptionInfo", resourceCulture);
             }
         }
+        
+        internal static string FavoritesTitle {
+            get {
+                return ResourceManager.GetString("FavoritesTitle", resourceCulture);
+            }
+        }
+        
+        internal static string SearchTitle {
+            get {
+                return ResourceManager.GetString("SearchTitle", resourceCulture);
+            }
+        }
+        
+        internal static string InputGame {
+            get {
+                return ResourceManager.GetString("InputGame", resourceCulture);
+            }
+        }
     }
 }

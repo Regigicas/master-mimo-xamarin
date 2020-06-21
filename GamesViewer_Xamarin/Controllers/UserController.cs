@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using GamesViewer_Xamarin.Misc;
 using Xamarin.Essentials;
@@ -150,6 +151,16 @@ namespace GamesViewer_Xamarin.Controllers
 
             var userFavsDB = DependencyService.Get<Interfaces.IUsuarioJuegosService>();
             await userFavsDB.DeleteByUserIdAndGameId(userJuego);
+        }
+
+        public static async Task<List<Models.JuegoFav>> GetFavorites()
+        {
+            var usuarioActivo = await GetUsuarioActivo();
+            if (usuarioActivo == null)
+                return null;
+
+            var userFavsDB = DependencyService.Get<Interfaces.IUsuarioJuegosService>();
+            return await userFavsDB.GetJuegoFavsByUserId(usuarioActivo.Id);
         }
     }
 }

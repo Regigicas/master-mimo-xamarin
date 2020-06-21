@@ -43,21 +43,21 @@ namespace GamesViewer_Xamarin.Pages
             };
             Navigation.PushAsync(platformView);
         }
-    }
 
-    internal class PlatformsPageViewModel : BindableObject
-    {
-        private List<Models.Platform> _platforms;
-        public List<Models.Platform> Platforms
+        internal class PlatformsPageViewModel : BindableObject
         {
-            get
+            private List<Models.Platform> _platforms;
+            public List<Models.Platform> Platforms
             {
-                return _platforms;
-            }
-            set
-            {
-                _platforms = value;
-                OnPropertyChanged();
+                get
+                {
+                    return _platforms;
+                }
+                set
+                {
+                    _platforms = value;
+                    OnPropertyChanged();
+                }
             }
         }
     }

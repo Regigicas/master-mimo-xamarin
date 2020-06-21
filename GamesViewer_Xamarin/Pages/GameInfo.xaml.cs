@@ -70,37 +70,42 @@ namespace GamesViewer_Xamarin.Pages
 
         void ToolbarItem_Clicked_QR(object sender, EventArgs e)
         {
-
-        }
-    }
-
-    internal class GameInfoViewModel : BindableObject
-    {
-        private Models.Juego _juego;
-        public Models.Juego Juego
-        {
-            get
+            var qrPage = new QRPage()
             {
-                return _juego;
-            }
-            set
-            {
-                _juego = value;
-                OnPropertyChanged();
-            }
+                Juego = _viewModel.Juego
+            };
+
+            Navigation.PushAsync(qrPage);
         }
 
-        private string _favIcon;
-        public string FavIcon
+        internal class GameInfoViewModel : BindableObject
         {
-            get
+            private Models.Juego _juego;
+            public Models.Juego Juego
             {
-                return _favIcon;
+                get
+                {
+                    return _juego;
+                }
+                set
+                {
+                    _juego = value;
+                    OnPropertyChanged();
+                }
             }
-            set
+
+            private string _favIcon;
+            public string FavIcon
             {
-                _favIcon = value;
-                OnPropertyChanged();
+                get
+                {
+                    return _favIcon;
+                }
+                set
+                {
+                    _favIcon = value;
+                    OnPropertyChanged();
+                }
             }
         }
     }

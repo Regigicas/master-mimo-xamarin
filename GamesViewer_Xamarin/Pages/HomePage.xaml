@@ -7,6 +7,8 @@
             SelectedTabColor="White"
             UnselectedTabColor="DarkGray"
             android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            android:TabbedPage.IsSmoothScrollEnabled="False"
             CurrentPageChanged="TabbedPage_CurrentPageChanged">
     <!--Pages can be added as references or inline-->
     <NavigationPage Title="Home">
@@ -15,19 +17,21 @@
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="{Static resources:AppResources.PlatformsTitle}"
-             IconImageSource="platform.png">
+                    IconImageSource="platform.png">
         <x:Arguments>
             <local:PlatformsPage/>
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Search">
+    <NavigationPage Title="{Static resources:AppResources.SearchTitle}"
+                    IconImageSource="search.png">
         <x:Arguments>
-            <ContentPage Title="Search"/>
+            <local:SearchPage/>
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Favorite">
+    <NavigationPage Title="{Static resources:AppResources.FavoritesTitle}"
+                    IconImageSource="favorite.png">
         <x:Arguments>
-            <ContentPage Title="Favorite"/>
+            <local:FavoritePage/>
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="User">

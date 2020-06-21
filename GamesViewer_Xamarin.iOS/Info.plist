@@ -34,5 +34,7 @@
 	<string>GamesViewer_Xamarin</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera permission to scan QR Codes</string>
 </dict>
 </plist>

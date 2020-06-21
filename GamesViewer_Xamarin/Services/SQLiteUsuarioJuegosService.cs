@@ -39,9 +39,13 @@ namespace GamesViewer_Xamarin.Services
             return await connection.Table<Models.UsuarioJuegos>().Where(u => u.UsuarioId == userId && u.JuegoId == gameId).FirstOrDefaultAsync();
         }
 
-        public async Task<List<Models.UsuarioJuegos>> GetJuegoFavsByUserId(int userId)
+        public async Task<List<Models.JuegoFav>> GetJuegoFavsByUserId(int userId)
         {
-            return await connection.Table<Models.UsuarioJuegos>().Where(u => u.UsuarioId == userId).ToListAsync();
+            var favs = await connection.Table<Models.UsuarioJuegos>().Where(u => u.UsuarioId == userId).ToListAsync();
+            var juegoFavDB = DependencyService.Get<Interfaces.IJuegoFavDataService>();
+            var ids = (from fav in favs
+                       select fav.JuegoId).ToList();
+            return await juegoFavDB.GetJuegosFavByList(ids);
         }
 
         public async Task<bool> InsertJuegoFav(Models.UsuarioJuegos model)
