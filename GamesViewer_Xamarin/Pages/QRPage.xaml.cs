@@ -38,6 +38,8 @@ namespace GamesViewer_Xamarin.Pages
             };
 
             _viewModel.BarCodeValue = JsonConvert.SerializeObject(qrModel);
+            var animation = new Animation(v => imageView.Scale = v, 0.6, 1);
+            animation.Commit(this, "ScaleAnimation", 16, 2000, Easing.Linear, (v, c) => imageView.Scale = 1, () => false);
         }
 
         internal class QRPageViewModel : BindableObject

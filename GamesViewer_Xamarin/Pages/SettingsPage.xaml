@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.SettingsPage"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             Title="{Static resources:AppResources.UserTitle}"
+             IconImageSource="user.png">
+    <StackLayout>
+        <Label Text="{Binding UserData.UsernameEmail}"
+               TextColor="Black"
+               FontAttributes="Bold"
+               FontSize="16"
+               Margin="10, 5, 0, 0"/>
+        <Button Text="{Static resources:AppResources.ChangePassword}"
+                WidthRequest="240"
+                HorizontalOptions="CenterAndExpand"
+                Margin="0, 10, 0, 0"
+                Style="{StaticResource buttonStyle}"/>
+        <Button Text="{Static resources:AppResources.Logout}"
+                WidthRequest="240"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="White"
+                CornerRadius="10"
+                BackgroundColor="Red"
+                Clicked="Button_Logout_Clicked"/>
+    </StackLayout>
+</ContentPage>

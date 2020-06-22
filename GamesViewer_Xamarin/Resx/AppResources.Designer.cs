@@ -292,5 +292,173 @@ namespace GamesViewer_Xamarin.Resx {
                 return ResourceManager.GetString("InputGame", resourceCulture);
             }
         }
+        
+        internal static string ApiDefault {
+            get {
+                return ResourceManager.GetString("ApiDefault", resourceCulture);
+            }
+        }
+        
+        internal static string ApiName {
+            get {
+                return ResourceManager.GetString("ApiName", resourceCulture);
+            }
+        }
+        
+        internal static string ApiNameInverse {
+            get {
+                return ResourceManager.GetString("ApiNameInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiReleased {
+            get {
+                return ResourceManager.GetString("ApiReleased", resourceCulture);
+            }
+        }
+        
+        internal static string ApiReleasedInverse {
+            get {
+                return ResourceManager.GetString("ApiReleasedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiAdded {
+            get {
+                return ResourceManager.GetString("ApiAdded", resourceCulture);
+            }
+        }
+        
+        internal static string ApiAddedInverse {
+            get {
+                return ResourceManager.GetString("ApiAddedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiCreated {
+            get {
+                return ResourceManager.GetString("ApiCreated", resourceCulture);
+            }
+        }
+        
+        internal static string ApiCreatedInverse {
+            get {
+                return ResourceManager.GetString("ApiCreatedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiRating {
+            get {
+                return ResourceManager.GetString("ApiRating", resourceCulture);
+            }
+        }
+        
+        internal static string ApiRatingInverse {
+            get {
+                return ResourceManager.GetString("ApiRatingInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderDefault {
+            get {
+                return ResourceManager.GetString("OrderDefault", resourceCulture);
+            }
+        }
+        
+        internal static string OrderName {
+            get {
+                return ResourceManager.GetString("OrderName", resourceCulture);
+            }
+        }
+        
+        internal static string OrderNameInverse {
+            get {
+                return ResourceManager.GetString("OrderNameInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderReleased {
+            get {
+                return ResourceManager.GetString("OrderReleased", resourceCulture);
+            }
+        }
+        
+        internal static string OrderReleasedInverse {
+            get {
+                return ResourceManager.GetString("OrderReleasedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderAdded {
+            get {
+                return ResourceManager.GetString("OrderAdded", resourceCulture);
+            }
+        }
+        
+        internal static string OrderAddedInverse {
+            get {
+                return ResourceManager.GetString("OrderAddedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderCreated {
+            get {
+                return ResourceManager.GetString("OrderCreated", resourceCulture);
+            }
+        }
+        
+        internal static string OrderCreatedInverse {
+            get {
+                return ResourceManager.GetString("OrderCreatedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderRating {
+            get {
+                return ResourceManager.GetString("OrderRating", resourceCulture);
+            }
+        }
+        
+        internal static string OrderRatingInverse {
+            get {
+                return ResourceManager.GetString("OrderRatingInverse", resourceCulture);
+            }
+        }
+        
+        internal static string UserTitle {
+            get {
+                return ResourceManager.GetString("UserTitle", resourceCulture);
+            }
+        }
+        
+        internal static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        internal static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        internal static string LogoutConfirm {
+            get {
+                return ResourceManager.GetString("LogoutConfirm", resourceCulture);
+            }
+        }
+        
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
+            }
+        }
     }
 }

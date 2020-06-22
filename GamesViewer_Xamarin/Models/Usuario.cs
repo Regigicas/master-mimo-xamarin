@@ -13,5 +13,15 @@ namespace GamesViewer_Xamarin.Models
         public string Email { get; set; }
         public string ShaHashPass { get; set; }
         public bool FavoriteNotification { get; set; }
+
+        [Ignore]
+        public string UsernameEmail
+        {
+            get
+            {
+                return $"{Username} - {Email}";
+            }
+            set {}
+        }
     }
 }

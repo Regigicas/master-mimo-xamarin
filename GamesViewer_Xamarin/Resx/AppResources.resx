@@ -176,4 +176,120 @@
     <data name="InputGame" xml:space="preserve">
         <value>Input game name</value>
     </data>
+    
+    <data name="ApiDefault" xml:space="preserve">
+        <value>default</value>
+    </data>
+    
+    <data name="ApiName" xml:space="preserve">
+        <value>name</value>
+    </data>
+    
+    <data name="ApiNameInverse" xml:space="preserve">
+        <value>-name</value>
+    </data>
+    
+    <data name="ApiReleased" xml:space="preserve">
+        <value>released</value>
+    </data>
+    
+    <data name="ApiReleasedInverse" xml:space="preserve">
+        <value>-released</value>
+    </data>
+    
+    <data name="ApiAdded" xml:space="preserve">
+        <value>added</value>
+    </data>
+    
+    <data name="ApiAddedInverse" xml:space="preserve">
+        <value>-added</value>
+    </data>
+    
+    <data name="ApiCreated" xml:space="preserve">
+        <value>created</value>
+    </data>
+    
+    <data name="ApiCreatedInverse" xml:space="preserve">
+        <value>-created</value>
+    </data>
+    
+    <data name="ApiRating" xml:space="preserve">
+        <value>rating</value>
+    </data>
+    
+    <data name="ApiRatingInverse" xml:space="preserve">
+        <value>-rating</value>
+    </data>
+    
+    <data name="OrderDefault" xml:space="preserve">
+        <value>By default</value>
+    </data>
+    
+    <data name="OrderName" xml:space="preserve">
+        <value>By name A-Z</value>
+    </data>
+    
+    <data name="OrderNameInverse" xml:space="preserve">
+        <value>By name Z-A</value>
+    </data>
+    
+    <data name="OrderReleased" xml:space="preserve">
+        <value>By release date lower to higher</value>
+    </data>
+    
+    <data name="OrderReleasedInverse" xml:space="preserve">
+        <value>By release date higher to lower</value>
+    </data>
+    
+    <data name="OrderAdded" xml:space="preserve">
+        <value>By date added to the platform lower to higher</value>
+    </data>
+    
+    <data name="OrderAddedInverse" xml:space="preserve">
+        <value>By date added to the platform higher to lower</value>
+    </data>
+    
+    <data name="OrderCreated" xml:space="preserve">
+        <value>By date created on the platform lower to higher</value>
+    </data>
+    
+    <data name="OrderCreatedInverse" xml:space="preserve">
+        <value>By date created on the platform higher to lower</value>
+    </data>
+    
+    <data name="OrderRating" xml:space="preserve">
+        <value>By rating lower to higher</value>
+    </data>
+    
+    <data name="OrderRatingInverse" xml:space="preserve">
+        <value>By rating higher to lower</value>
+    </data>
+    
+    <data name="UserTitle" xml:space="preserve">
+        <value>User</value>
+    </data>
+    
+    <data name="Logout" xml:space="preserve">
+        <value>Logout</value>
+    </data>
+    
+    <data name="ChangePassword" xml:space="preserve">
+        <value>Change password</value>
+    </data>
+    
+    <data name="Logout" xml:space="preserve">
+        <value>Logout</value>
+    </data>
+    
+    <data name="LogoutConfirm" xml:space="preserve">
+        <value>Are you sure you want to logout?</value>
+    </data>
+    
+    <data name="Cancel" xml:space="preserve">
+        <value>Cancel</value>
+    </data>
+    
+    <data name="Yes" xml:space="preserve">
+        <value>Yes</value>
+    </data>
 </root>

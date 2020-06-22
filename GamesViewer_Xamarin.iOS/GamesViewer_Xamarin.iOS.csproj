@@ -228,5 +228,6 @@
     <BundleResource Include="Resources\fav_status_off.png" />
     <BundleResource Include="Resources\fav_status_on.png" />
     <BundleResource Include="Resources\qr_icon.png" />
+    <BundleResource Include="Resources\user.png" />
   </ItemGroup>
 </Project>

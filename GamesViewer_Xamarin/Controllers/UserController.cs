@@ -162,5 +162,13 @@ namespace GamesViewer_Xamarin.Controllers
             var userFavsDB = DependencyService.Get<Interfaces.IUsuarioJuegosService>();
             return await userFavsDB.GetJuegoFavsByUserId(usuarioActivo.Id);
         }
+
+        public static async Task DoLogout()
+        {
+            Preferences.Remove(ActiveUserId);
+            var secureStorage = DependencyService.Get<Interfaces.ISecureStorage>();
+            await secureStorage.SetPropertyAsync(UsernameStoreFieldName, null);
+            await secureStorage.SetPropertyAsync(PasswordStoreFieldname, null);
+        }
     }
 }
