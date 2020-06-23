@@ -102,7 +102,7 @@
     </data>
     
     <data name="EnumOldNewPasswordSame" xml:space="preserve">
-        <value>Old password must be different from new password</value>
+        <value>New password must be different from old password</value>
     </data>
     
     <data name="EnumInternalError" xml:space="preserve">
@@ -275,10 +275,6 @@
     
     <data name="ChangePassword" xml:space="preserve">
         <value>Change password</value>
-    </data>
-    
-    <data name="Logout" xml:space="preserve">
-        <value>Logout</value>
     </data>
     
     <data name="LogoutConfirm" xml:space="preserve">

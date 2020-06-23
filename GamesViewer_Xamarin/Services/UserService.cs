@@ -51,7 +51,6 @@ namespace GamesViewer_Xamarin.Services
                 Username = username,
                 Email = email,
                 ShaHashPass = passHash,
-                FavoriteNotification = false
             };
             if (!await usuarioDB.InsertUser(usuario))
                 return Enums.UsuarioResultEnum.InternalError;

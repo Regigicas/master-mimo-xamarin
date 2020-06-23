@@ -13,7 +13,315 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     
-    <data name="HelloWorld" xml:space="preserve">
-        <value>¡Hola Mundo!</value>
+    <data name="AppName" xml:space="preserve">
+        <value>GamesViewer</value>
+    </data>
+    
+    <data name="ApiURL" xml:space="preserve">
+        <value>https://api.rawg.io/api</value>
+    </data>
+    
+    <data name="LoadingStr" xml:space="preserve">
+        <value>Cargando...</value>
+    </data>
+    
+        <data name="LoadingTitle" xml:space="preserve">
+        <value>Cargando</value>
+    </data>
+    
+    <data name="LoginStr" xml:space="preserve">
+        <value>Iniciar sesión</value>
+    </data>
+    
+    <data name="RegisterStr" xml:space="preserve">
+        <value>Registrarse</value>
+    </data>
+    
+    <data name="UsernameStr" xml:space="preserve">
+        <value>Nombre de usuario</value>
+    </data>
+    
+    <data name="PasswordStr" xml:space="preserve">
+        <value>Contraseña</value>
+    </data>
+    
+    <data name="UsernameRegister" xml:space="preserve">
+        <value>Nombre de usuario:</value>
+    </data>
+    
+    <data name="EmailRegister" xml:space="preserve">
+        <value>Correo electrónico:</value>
+    </data>
+    
+    <data name="PasswordRegister" xml:space="preserve">
+        <value>Contraseña:</value>
+    </data>
+    
+    <data name="RetypePasswordRegister" xml:space="preserve">
+        <value>Repita la contraseña:</value>
+    </data>
+    
+    <data name="EnterUsername" xml:space="preserve">
+        <value>Introduce tu nombre de usuario</value>
+    </data>
+    
+    <data name="EnterEmail" xml:space="preserve">
+        <value>Introduce tu correo electrónico</value>
+    </data>
+    
+    <data name="EnterPassword" xml:space="preserve">
+        <value>Introduce la contraseña, Min 8 carácteres</value>
+    </data>
+    
+    <data name="EnterRetypePassword" xml:space="preserve">
+        <value>Repita la contraseñad</value>
+    </data>
+    
+    <data name="RegisterTitle" xml:space="preserve">
+        <value>Registrarse</value>
+    </data>
+    
+    <data name="EnumExistingUser" xml:space="preserve">
+        <value>El nombre de usuario ya está en uso</value>
+    </data>
+    
+    <data name="EnumExistingEmail" xml:space="preserve">
+        <value>El correo electrónico ya está en uso</value>
+    </data>
+    
+    <data name="EnumInvalidEmail" xml:space="preserve">
+        <value>El correo electrónico proporcionado no es valido</value>
+    </data>
+    
+    <data name="EnumUsernameNotFound" xml:space="preserve">
+        <value>No hay ninguna cuenta con ese nombre de usuario</value>
+    </data>
+    
+    <data name="EnumPasswordMismatch" xml:space="preserve">
+        <value>La contraseña no coincide</value>
+    </data>
+    
+    <data name="EnumOldNewPasswordSame" xml:space="preserve">
+        <value>La nueva contraseña tiene que ser diferente de la vieja</value>
+    </data>
+    
+    <data name="EnumInternalError" xml:space="preserve">
+        <value>Error interno del servidor, intentelo de nuevo</value>
+    </data>
+    
+    <data name="EnumOK" xml:space="preserve">
+        <value>OK</value>
+    </data>
+    
+    <data name="RegisterOkMsg" xml:space="preserve">
+        <value>Registro satisfactorio, se te redirigirá a inicio de sesión en breve</value>
+    </data>
+    
+    <data name="NoAutologinSupport" xml:space="preserve">
+        <value>Tu dispositivo no soporta encriptación, el inicio de sesión automático no es posible.</value>
+    </data>
+    
+    <data name="PlatformsTitle" xml:space="preserve">
+        <value>Plataformas</value>
+    </data>
+    
+    <data name="PlatformInfoTitle" xml:space="preserve">
+        <value>Plataforma {0}</value>
+    </data>
+    
+    <data name="NoDescription" xml:space="preserve">
+        <value>Sin descripción</value>
+    </data>
+    
+    <data name="ViewPlatformGames" xml:space="preserve">
+        <value>Ver juegos de la plataforma</value>
+    </data>
+    
+    <data name="PlatformGamesListTitle" xml:space="preserve">
+        <value>Juegos {0}</value>
+    </data>
+    
+    <data name="RefitError" xml:space="preserve">
+        <value>Error interno del servidor, intentelo de nuevo</value>
+    </data>
+    
+    <data name="GameInfoTitle" xml:space="preserve">
+        <value>{0}</value>
+    </data>
+    
+    <data name="AvailableInfo" xml:space="preserve">
+        <value>Disponible en: </value>
+    </data>    
+    
+    <data name="RatingInfo" xml:space="preserve">
+        <value>Valoración: </value>
+    </data>
+    
+    <data name="ReleaseDateInfo" xml:space="preserve">
+        <value>Fecha de salida: </value>
+    </data>
+    
+    <data name="DescriptionInfo" xml:space="preserve">
+        <value>Descripción: </value>
+    </data>
+    
+    <data name="FavoritesTitle" xml:space="preserve">
+        <value>Favoritos</value>
+    </data>
+    
+    <data name="SearchTitle" xml:space="preserve">
+        <value>Buscar</value>
+    </data>
+    
+    <data name="InputGame" xml:space="preserve">
+        <value>Introduzca el nombre del juego</value>
+    </data>
+    
+    <data name="ApiDefault" xml:space="preserve">
+        <value>default</value>
+    </data>
+    
+    <data name="ApiName" xml:space="preserve">
+        <value>name</value>
+    </data>
+    
+    <data name="ApiNameInverse" xml:space="preserve">
+        <value>-name</value>
+    </data>
+    
+    <data name="ApiReleased" xml:space="preserve">
+        <value>released</value>
+    </data>
+    
+    <data name="ApiReleasedInverse" xml:space="preserve">
+        <value>-released</value>
+    </data>
+    
+    <data name="ApiAdded" xml:space="preserve">
+        <value>added</value>
+    </data>
+    
+    <data name="ApiAddedInverse" xml:space="preserve">
+        <value>-added</value>
+    </data>
+    
+    <data name="ApiCreated" xml:space="preserve">
+        <value>created</value>
+    </data>
+    
+    <data name="ApiCreatedInverse" xml:space="preserve">
+        <value>-created</value>
+    </data>
+    
+    <data name="ApiRating" xml:space="preserve">
+        <value>rating</value>
+    </data>
+    
+    <data name="ApiRatingInverse" xml:space="preserve">
+        <value>-rating</value>
+    </data>
+    
+    <data name="OrderDefault" xml:space="preserve">
+        <value>Por defecto</value>
+    </data>
+    
+    <data name="OrderName" xml:space="preserve">
+        <value>Por nombre A-Z</value>
+    </data>
+    
+    <data name="OrderNameInverse" xml:space="preserve">
+        <value>Por nombre Z-A</value>
+    </data>
+    
+    <data name="OrderReleased" xml:space="preserve">
+        <value>Por fecha de salida menor a mayor</value>
+    </data>
+    
+    <data name="OrderReleasedInverse" xml:space="preserve">
+        <value>Por fecha de salida mayor a menor</value>
+    </data>
+    
+    <data name="OrderAdded" xml:space="preserve">
+        <value>Por fecha de añadido a la plataforma menor a mayor</value>
+    </data>
+    
+    <data name="OrderAddedInverse" xml:space="preserve">
+        <value>Por fecha de añadido a la plataforma mayor a menor</value>
+    </data>
+    
+    <data name="OrderCreated" xml:space="preserve">
+        <value>Por fecha de creación en la plataforma menor a mayor</value>
+    </data>
+    
+    <data name="OrderCreatedInverse" xml:space="preserve">
+        <value>Por fecha de añadido a la plataforma mayor a menor</value>
+    </data>
+    
+    <data name="OrderRating" xml:space="preserve">
+        <value>Por valoración menor a mayor</value>
+    </data>
+    
+    <data name="OrderRatingInverse" xml:space="preserve">
+        <value>Por valoración mayor a menor</value>
+    </data>
+    
+    <data name="UserTitle" xml:space="preserve">
+        <value>Usuario</value>
+    </data>
+    
+    <data name="Logout" xml:space="preserve">
+        <value>Cerrar sesión</value>
+    </data>
+    
+    <data name="ChangePassword" xml:space="preserve">
+        <value>Cambiar contraseña</value>
+    </data>
+    
+    <data name="LogoutConfirm" xml:space="preserve">
+        <value>¿Estás seguro de que quieres cerrar la sesión?</value>
+    </data>
+    
+    <data name="Cancel" xml:space="preserve">
+        <value>Cancelar</value>
+    </data>
+    
+    <data name="Yes" xml:space="preserve">
+        <value>Sí</value>
+    </data>
+    
+    <data name="ChangePasswordTitle" xml:space="preserve">
+        <value>Cambiar contraseña</value>
+    </data>
+    
+    <data name="OldPassword" xml:space="preserve">
+        <value>Vieja contraseña: </value>
+    </data>
+    
+    <data name="OldPasswordPlaceholder" xml:space="preserve">
+        <value>Vieja contraseña</value>
+    </data>
+    
+    <data name="NewPassword" xml:space="preserve">
+        <value>Nueva contraseña: </value>
+    </data>
+    
+    <data name="NewPasswordPlaceholder" xml:space="preserve">
+        <value>Nueva contraseña</value>
+    </data>
+    
+    <data name="ChangePasswordWarning" xml:space="preserve">
+        <value>Cambiar la contraseña cerrará la sesión, ¿Estás seguro?</value>
+    </data>
+    
+    <data name="EnumOldPasswordMistmatch" xml:space="preserve">
+        <value>La vieja contraseña no coincide</value>
+    </data>
+    
+    <data name="HomeTitle" xml:space="preserve">
+        <value>Inicio</value>
+    </data>
+    
+    <data name="ScanQRTxt" xml:space="preserve">
+        <value>Escanear QR</value>
     </data>
 </root>

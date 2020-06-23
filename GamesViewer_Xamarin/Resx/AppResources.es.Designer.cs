@@ -47,9 +47,471 @@ namespace GamesViewer_Xamarin.Resx {
             }
         }
         
-        internal static string HelloWorld {
+        internal static string AppName {
             get {
-                return ResourceManager.GetString("HelloWorld", resourceCulture);
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        internal static string ApiURL {
+            get {
+                return ResourceManager.GetString("ApiURL", resourceCulture);
+            }
+        }
+        
+        internal static string LoadingStr {
+            get {
+                return ResourceManager.GetString("LoadingStr", resourceCulture);
+            }
+        }
+        
+        internal static string LoadingTitle {
+            get {
+                return ResourceManager.GetString("LoadingTitle", resourceCulture);
+            }
+        }
+        
+        internal static string LoginStr {
+            get {
+                return ResourceManager.GetString("LoginStr", resourceCulture);
+            }
+        }
+        
+        internal static string RegisterStr {
+            get {
+                return ResourceManager.GetString("RegisterStr", resourceCulture);
+            }
+        }
+        
+        internal static string UsernameStr {
+            get {
+                return ResourceManager.GetString("UsernameStr", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordStr {
+            get {
+                return ResourceManager.GetString("PasswordStr", resourceCulture);
+            }
+        }
+        
+        internal static string UsernameRegister {
+            get {
+                return ResourceManager.GetString("UsernameRegister", resourceCulture);
+            }
+        }
+        
+        internal static string EmailRegister {
+            get {
+                return ResourceManager.GetString("EmailRegister", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordRegister {
+            get {
+                return ResourceManager.GetString("PasswordRegister", resourceCulture);
+            }
+        }
+        
+        internal static string RetypePasswordRegister {
+            get {
+                return ResourceManager.GetString("RetypePasswordRegister", resourceCulture);
+            }
+        }
+        
+        internal static string EnterUsername {
+            get {
+                return ResourceManager.GetString("EnterUsername", resourceCulture);
+            }
+        }
+        
+        internal static string EnterEmail {
+            get {
+                return ResourceManager.GetString("EnterEmail", resourceCulture);
+            }
+        }
+        
+        internal static string EnterPassword {
+            get {
+                return ResourceManager.GetString("EnterPassword", resourceCulture);
+            }
+        }
+        
+        internal static string EnterRetypePassword {
+            get {
+                return ResourceManager.GetString("EnterRetypePassword", resourceCulture);
+            }
+        }
+        
+        internal static string RegisterTitle {
+            get {
+                return ResourceManager.GetString("RegisterTitle", resourceCulture);
+            }
+        }
+        
+        internal static string EnumExistingUser {
+            get {
+                return ResourceManager.GetString("EnumExistingUser", resourceCulture);
+            }
+        }
+        
+        internal static string EnumExistingEmail {
+            get {
+                return ResourceManager.GetString("EnumExistingEmail", resourceCulture);
+            }
+        }
+        
+        internal static string EnumInvalidEmail {
+            get {
+                return ResourceManager.GetString("EnumInvalidEmail", resourceCulture);
+            }
+        }
+        
+        internal static string EnumUsernameNotFound {
+            get {
+                return ResourceManager.GetString("EnumUsernameNotFound", resourceCulture);
+            }
+        }
+        
+        internal static string EnumPasswordMismatch {
+            get {
+                return ResourceManager.GetString("EnumPasswordMismatch", resourceCulture);
+            }
+        }
+        
+        internal static string EnumOldNewPasswordSame {
+            get {
+                return ResourceManager.GetString("EnumOldNewPasswordSame", resourceCulture);
+            }
+        }
+        
+        internal static string EnumInternalError {
+            get {
+                return ResourceManager.GetString("EnumInternalError", resourceCulture);
+            }
+        }
+        
+        internal static string EnumOK {
+            get {
+                return ResourceManager.GetString("EnumOK", resourceCulture);
+            }
+        }
+        
+        internal static string RegisterOkMsg {
+            get {
+                return ResourceManager.GetString("RegisterOkMsg", resourceCulture);
+            }
+        }
+        
+        internal static string NoAutologinSupport {
+            get {
+                return ResourceManager.GetString("NoAutologinSupport", resourceCulture);
+            }
+        }
+        
+        internal static string PlatformsTitle {
+            get {
+                return ResourceManager.GetString("PlatformsTitle", resourceCulture);
+            }
+        }
+        
+        internal static string PlatformInfoTitle {
+            get {
+                return ResourceManager.GetString("PlatformInfoTitle", resourceCulture);
+            }
+        }
+        
+        internal static string NoDescription {
+            get {
+                return ResourceManager.GetString("NoDescription", resourceCulture);
+            }
+        }
+        
+        internal static string ViewPlatformGames {
+            get {
+                return ResourceManager.GetString("ViewPlatformGames", resourceCulture);
+            }
+        }
+        
+        internal static string PlatformGamesListTitle {
+            get {
+                return ResourceManager.GetString("PlatformGamesListTitle", resourceCulture);
+            }
+        }
+        
+        internal static string RefitError {
+            get {
+                return ResourceManager.GetString("RefitError", resourceCulture);
+            }
+        }
+        
+        internal static string GameInfoTitle {
+            get {
+                return ResourceManager.GetString("GameInfoTitle", resourceCulture);
+            }
+        }
+        
+        internal static string AvailableInfo {
+            get {
+                return ResourceManager.GetString("AvailableInfo", resourceCulture);
+            }
+        }
+        
+        internal static string RatingInfo {
+            get {
+                return ResourceManager.GetString("RatingInfo", resourceCulture);
+            }
+        }
+        
+        internal static string ReleaseDateInfo {
+            get {
+                return ResourceManager.GetString("ReleaseDateInfo", resourceCulture);
+            }
+        }
+        
+        internal static string DescriptionInfo {
+            get {
+                return ResourceManager.GetString("DescriptionInfo", resourceCulture);
+            }
+        }
+        
+        internal static string FavoritesTitle {
+            get {
+                return ResourceManager.GetString("FavoritesTitle", resourceCulture);
+            }
+        }
+        
+        internal static string SearchTitle {
+            get {
+                return ResourceManager.GetString("SearchTitle", resourceCulture);
+            }
+        }
+        
+        internal static string InputGame {
+            get {
+                return ResourceManager.GetString("InputGame", resourceCulture);
+            }
+        }
+        
+        internal static string ApiDefault {
+            get {
+                return ResourceManager.GetString("ApiDefault", resourceCulture);
+            }
+        }
+        
+        internal static string ApiName {
+            get {
+                return ResourceManager.GetString("ApiName", resourceCulture);
+            }
+        }
+        
+        internal static string ApiNameInverse {
+            get {
+                return ResourceManager.GetString("ApiNameInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiReleased {
+            get {
+                return ResourceManager.GetString("ApiReleased", resourceCulture);
+            }
+        }
+        
+        internal static string ApiReleasedInverse {
+            get {
+                return ResourceManager.GetString("ApiReleasedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiAdded {
+            get {
+                return ResourceManager.GetString("ApiAdded", resourceCulture);
+            }
+        }
+        
+        internal static string ApiAddedInverse {
+            get {
+                return ResourceManager.GetString("ApiAddedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiCreated {
+            get {
+                return ResourceManager.GetString("ApiCreated", resourceCulture);
+            }
+        }
+        
+        internal static string ApiCreatedInverse {
+            get {
+                return ResourceManager.GetString("ApiCreatedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string ApiRating {
+            get {
+                return ResourceManager.GetString("ApiRating", resourceCulture);
+            }
+        }
+        
+        internal static string ApiRatingInverse {
+            get {
+                return ResourceManager.GetString("ApiRatingInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderDefault {
+            get {
+                return ResourceManager.GetString("OrderDefault", resourceCulture);
+            }
+        }
+        
+        internal static string OrderName {
+            get {
+                return ResourceManager.GetString("OrderName", resourceCulture);
+            }
+        }
+        
+        internal static string OrderNameInverse {
+            get {
+                return ResourceManager.GetString("OrderNameInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderReleased {
+            get {
+                return ResourceManager.GetString("OrderReleased", resourceCulture);
+            }
+        }
+        
+        internal static string OrderReleasedInverse {
+            get {
+                return ResourceManager.GetString("OrderReleasedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderAdded {
+            get {
+                return ResourceManager.GetString("OrderAdded", resourceCulture);
+            }
+        }
+        
+        internal static string OrderAddedInverse {
+            get {
+                return ResourceManager.GetString("OrderAddedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderCreated {
+            get {
+                return ResourceManager.GetString("OrderCreated", resourceCulture);
+            }
+        }
+        
+        internal static string OrderCreatedInverse {
+            get {
+                return ResourceManager.GetString("OrderCreatedInverse", resourceCulture);
+            }
+        }
+        
+        internal static string OrderRating {
+            get {
+                return ResourceManager.GetString("OrderRating", resourceCulture);
+            }
+        }
+        
+        internal static string OrderRatingInverse {
+            get {
+                return ResourceManager.GetString("OrderRatingInverse", resourceCulture);
+            }
+        }
+        
+        internal static string UserTitle {
+            get {
+                return ResourceManager.GetString("UserTitle", resourceCulture);
+            }
+        }
+        
+        internal static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        internal static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        internal static string LogoutConfirm {
+            get {
+                return ResourceManager.GetString("LogoutConfirm", resourceCulture);
+            }
+        }
+        
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
+            }
+        }
+        
+        internal static string ChangePasswordTitle {
+            get {
+                return ResourceManager.GetString("ChangePasswordTitle", resourceCulture);
+            }
+        }
+        
+        internal static string OldPassword {
+            get {
+                return ResourceManager.GetString("OldPassword", resourceCulture);
+            }
+        }
+        
+        internal static string OldPasswordPlaceholder {
+            get {
+                return ResourceManager.GetString("OldPasswordPlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        internal static string NewPasswordPlaceholder {
+            get {
+                return ResourceManager.GetString("NewPasswordPlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string ChangePasswordWarning {
+            get {
+                return ResourceManager.GetString("ChangePasswordWarning", resourceCulture);
+            }
+        }
+        
+        internal static string EnumOldPasswordMistmatch {
+            get {
+                return ResourceManager.GetString("EnumOldPasswordMistmatch", resourceCulture);
+            }
+        }
+        
+        internal static string HomeTitle {
+            get {
+                return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        internal static string ScanQRTxt {
+            get {
+                return ResourceManager.GetString("ScanQRTxt", resourceCulture);
             }
         }
     }
