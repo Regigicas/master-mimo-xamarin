@@ -3,16 +3,29 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             xmlns:local="clr-namespace:GamesViewer_Xamarin.Pages"
             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+            xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
+            xmlns:behaviors="clr-namespace:GamesViewer_Xamarin.Behaviors"
+            x:Name="tabbedPage"
             BarBackgroundColor="{StaticResource colorPurple}"
             SelectedTabColor="White"
             UnselectedTabColor="DarkGray"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.IsSwipePagingEnabled="False"
-            android:TabbedPage.IsSmoothScrollEnabled="False"
-            CurrentPageChanged="TabbedPage_CurrentPageChanged">
-    <NavigationPage Title="Home">
+            android:TabbedPage.IsSmoothScrollEnabled="False">
+    <TabbedPage.BindingContext>
+        <modelViews:HomePageViewModel/>
+    </TabbedPage.BindingContext>
+
+    <TabbedPage.Behaviors>
+        <behaviors:EventToCommandBehavior EventName="CurrentPageChanged"
+                                          Command="{Binding PageChangedCommand}"
+                                          CommandParameter="{Binding Source={Reference tabbedPage}}"/>
+    </TabbedPage.Behaviors>
+
+    <NavigationPage Title="{Static resources:AppResources.HomeTitle}"
+                    IconImageSource="home.png">
         <x:Arguments>
-            <ContentPage Title="Home"/>
+            <local:StartPage/>
         </x:Arguments>
     </NavigationPage>
 

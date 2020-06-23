@@ -29,5 +29,10 @@ namespace GamesViewer_Xamarin.Services
 
             return false;
         }
+
+        public bool Remove(string key)
+        {
+            return Xamarin.Essentials.SecureStorage.Remove(key);
+        }
     }
 }

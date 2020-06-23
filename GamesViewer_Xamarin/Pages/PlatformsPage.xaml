@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.PlatformsPage"
-             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx" xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
              Title="{Static resources:AppResources.PlatformsTitle}"
              IconImageSource="platform.png">
+    <ContentPage.BindingContext>
+        <modelViews:PlatformsPageViewModel/>
+    </ContentPage.BindingContext>
+
     <ListView ItemsSource="{Binding Platforms}"
-                RowHeight="44"
-                HasUnevenRows="False"
-                CachingStrategy="RecycleElement"
-                ItemSelected="ListView_ItemSelected">
+              RowHeight="44"
+              HasUnevenRows="False"
+              CachingStrategy="RecycleElement"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

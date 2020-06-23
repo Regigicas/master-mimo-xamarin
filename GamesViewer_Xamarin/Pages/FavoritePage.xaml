@@ -4,20 +4,26 @@
              xmlns:misc="clr-namespace:GamesViewer_Xamarin.Misc"
              Title="{Static resources:AppResources.FavoritesTitle}"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
              IconImageSource="favorite.png">
+    <ContentPage.BindingContext>
+        <modelViews:FavoritePageViewModel/>
+    </ContentPage.BindingContext>
+
     <CollectionView ItemsSource="{Binding Juegos}"
                     ItemSizingStrategy="MeasureFirstItem"
                     Scale="0.1"
                     x:Name="collectionView"
                     SelectionMode="Single"
-                    SelectionChanged="CollectionView_SelectionChanged">
+                    SelectionChangedCommand="{Binding SelectionChangedCommand}"
+                    SelectionChangedCommandParameter="{Binding Source={x:Reference collectionView}}">
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical"
                              Span="2"/>
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <AbsoluteLayout Padding="10, 10, 10, 10">
+                <AbsoluteLayout>
                     <ffimageloading:CachedImage Source="{Binding BackgroundImage}"
                                                 Aspect="AspectFill"
                                                 ErrorPlaceholder="placeholder_image.png"
@@ -39,6 +45,13 @@
                                                Color="Black"/>
                         </Label.Effects>
                     </Label>
+
+                    <AbsoluteLayout.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <OnPlatform.iOS>10, 5, 11, 10</OnPlatform.iOS>
+                            <OnPlatform.Android>10, 10, 10, 10</OnPlatform.Android>
+                        </OnPlatform>
+                    </AbsoluteLayout.Padding>
                 </AbsoluteLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>

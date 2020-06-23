@@ -3,16 +3,35 @@
              xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
+             xmlns:behaviors="clr-namespace:GamesViewer_Xamarin.Behaviors"
+             xmlns:converters="clr-namespace:GamesViewer_Xamarin.Converters"
              Title="{Binding Platform.Name, StringFormat={Static resources:AppResources.PlatformGamesListTitle}}">
-    <ListView ItemsSource="{Binding Juegos}"
+    <ContentPage.BindingContext>
+        <modelViews:PlatformGameListViewModel/>
+    </ContentPage.BindingContext>
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+        <converters:ItemAppearingEventConverter x:Key="ItemAppearingConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+    <ListView x:Name="listView"
+              ItemsSource="{Binding JuegosResult}"
               RowHeight="95"
               CachingStrategy="RecycleElement"
               HasUnevenRows="False"
               IsPullToRefreshEnabled="True"
+              SelectedItem="{Binding SelectedGame, Mode=TwoWay}"
               RefreshCommand="{Binding RefreshCommand}"
-              IsRefreshing="{Binding IsRefreshing}"
-              ItemAppearing="ListView_ItemAppearing"
-              ItemSelected="ListView_ItemSelected">
+              IsRefreshing="{Binding IsRefreshing}">
+        <ListView.Behaviors>
+            <behaviors:EventToCommandBehavior EventName="ItemAppearing"
+                                              Command="{Binding ItemAppearingCommand}"
+                                              Converter="{StaticResource ItemAppearingConverter}"/>
+        </ListView.Behaviors>
+
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -28,11 +47,22 @@
                                     </ffimageloading:CachedImage.Transformations>
                                 </ffimageloading:CachedImage>
                         </AbsoluteLayout>
-                        <Label Text="{Binding Name}"
-                               MaxLines="3"
-                               AbsoluteLayout.LayoutFlags="PositionProportional"
-                               AbsoluteLayout.LayoutBounds="0.55, 0.5, 200, AutoSize"
-                               TextColor="Black"/>
+                        <OnPlatform x:TypeArguments="Label">
+                            <OnPlatform.iOS>
+                                <Label Text="{Binding Name}"
+                                       MaxLines="3"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.55, 0.5, 185, AutoSize"
+                                       TextColor="Black"/>
+                            </OnPlatform.iOS>
+                            <OnPlatform.Android>
+                                <Label Text="{Binding Name}"
+                                       MaxLines="3"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.55, 0.5, 200, AutoSize"
+                                       TextColor="Black"/>
+                            </OnPlatform.Android>
+                        </OnPlatform>
                         <Label Text="{Binding Released}"
                                AbsoluteLayout.LayoutFlags="PositionProportional"
                                AbsoluteLayout.LayoutBounds="0.95, 0.5, AutoSize, AutoSize"

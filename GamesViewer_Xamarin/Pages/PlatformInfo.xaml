@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.PlatformInfo"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
              Title="{Binding Platform.Name, StringFormat={Static resources:AppResources.PlatformInfoTitle}}">
+    <ContentPage.BindingContext>
+        <modelViews:PlatformInfoViewModel/>
+    </ContentPage.BindingContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -18,10 +23,16 @@
 
             <ScrollView VerticalOptions="FillAndExpand">
                 <Label Text="{Binding Platform.DescriptionWithPlaceholder}"
-                       TextType="Html"
                        TextColor="Black"
                        Margin="10, 0, 10, 10"
-                       x:Name="labelDesc"/>
+                       x:Name="labelDesc">
+                    <Label.TextType>
+                        <OnPlatform x:TypeArguments="TextType">
+                            <OnPlatform.iOS>Text</OnPlatform.iOS>
+                            <OnPlatform.Android>Html</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.TextType>
+                </Label>
             </ScrollView>
         </StackLayout>
 
@@ -31,7 +42,7 @@
                 WidthRequest="240"
                 HeightRequest="50"
                 Style="{StaticResource buttonStyle}"
-                Clicked="Button_Games_Clicked"
+                Command="{Binding GoPlatformCommand}"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand"/>
     </Grid>

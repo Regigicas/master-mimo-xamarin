@@ -1,11 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+
 using Xamarin.Forms;
 
 namespace GamesViewer_Xamarin.Pages
 {
-    public partial class SettingsPage : ContentPage
+    public partial class StartPage : ContentPage
     {
-        public SettingsPage()
+        public StartPage()
         {
             InitializeComponent();
         }

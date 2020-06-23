@@ -1,37 +1,38 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.LoginPage"
              xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
+             xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
+             xmlns:behaviors="clr-namespace:GamesViewer_Xamarin.Behaviors"
              Title="{Static resources:AppResources.AppName}">
+    <ContentPage.BindingContext>
+        <modelViews:LoginPageViewModel/>
+    </ContentPage.BindingContext>
+
     <AbsoluteLayout>
         <StackLayout
             AbsoluteLayout.LayoutBounds="0.5, 0.15, 250, AutoSize"
             AbsoluteLayout.LayoutFlags="PositionProportional">
-            <Image
-                x:Name="logoApp"
+            <Image x:Name="logoApp"
                 Source="logo_app"
                 WidthRequest="220"/>
 
-            <Label
-                x:Name="textLogin"
+            <Label x:Name="textLogin"
                 Text="{Static resources:AppResources.LoginStr}"
                 XAlign="Center"
                 TextColor="Black"
                 FontSize="30"/>
 
-            <Entry
-                x:Name="entryUsername"
+            <Entry Text="{Binding Username, Mode=TwoWay}"
                 WidthRequest="250"
                 Placeholder="{Static resources:AppResources.UsernameStr}"
-                TextChanged="Entry_TextChanged"
                 ReturnType="Next"
-                Completed="Entry_Completed"
-                Keyboard="Plain"/>
+                Keyboard="Plain">
+            </Entry>
 
-            <Entry
-                x:Name="entryPassword"
+            <Entry Text="{Binding Password, Mode=TwoWay}"
                 WidthRequest="250"
                 Placeholder="{Static resources:AppResources.PasswordStr}"
-                TextChanged="Entry_TextChanged"
+                ReturnCommand="{Binding LoginCommand}"
                 ReturnType="Done"
                 IsPassword="True"/>
 
@@ -39,14 +40,13 @@
                 Margin="20, 5, 20, 0"
                 Text="{Static resources:AppResources.LoginStr}"
                 Style="{StaticResource buttonStyle}"
-                IsEnabled="{Binding EnableLogin}"
-                Clicked="Button_Login_Clicked"/>
+                Command="{Binding LoginCommand}"/>
 
             <Button
                 Margin="20, 5, 20, 0"
                 Text="{Static resources:AppResources.RegisterStr}"
                 BackgroundColor="Transparent"
-                Clicked="Button_Register_Clicked"/>
+                Command="{Binding RegisterCommand}"/>
         </StackLayout>
     </AbsoluteLayout>
 </ContentPage>

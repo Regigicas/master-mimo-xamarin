@@ -5,15 +5,15 @@ using GamesViewer_Xamarin.Misc;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace GamesViewer_Xamarin.Controllers
+namespace GamesViewer_Xamarin.Services
 {
-    public static class UserController
+    public class UserService
     {
         static string UsernameStoreFieldName = "acc_login_username";
         static string PasswordStoreFieldname = "acc_login_password";
         static string ActiveUserId = "acc_active_user_id";
 
-        public static async Task<bool> TryAutoLogin()
+        public async Task<bool> TryAutoLogin()
         {
             var secureStorage = DependencyService.Get<Interfaces.ISecureStorage>();
             var username = await secureStorage.GetPropertyAsync(UsernameStoreFieldName);
@@ -31,7 +31,7 @@ namespace GamesViewer_Xamarin.Controllers
             return false;
         }
 
-        public static async Task<Enums.UsuarioResultEnum> RegisterUser(string username, string email, string password)
+        public async Task<Enums.UsuarioResultEnum> RegisterUser(string username, string email, string password)
         {
             if (!Util.IsEmailValid(email))
                 return Enums.UsuarioResultEnum.InvalidEmail;
@@ -59,7 +59,7 @@ namespace GamesViewer_Xamarin.Controllers
             return Enums.UsuarioResultEnum.Ok;
         }
 
-        public static async Task<Tuple<Enums.UsuarioResultEnum, Models.Usuario>> TryLogin(string username, string password)
+        public async Task<Tuple<Enums.UsuarioResultEnum, Models.Usuario>> TryLogin(string username, string password)
         {
             var usuarioDB = DependencyService.Get<Interfaces.IUserDataService>();
             var usuario = await usuarioDB.GetUserByUsername(username);
@@ -73,7 +73,7 @@ namespace GamesViewer_Xamarin.Controllers
             return Tuple.Create(Enums.UsuarioResultEnum.Ok, usuario);
         }
 
-        public static async Task<bool> SaveUserLoginDataAsync(string username, string password)
+        public async Task<bool> SaveUserLoginDataAsync(string username, string password)
         {
             var secureStorage = DependencyService.Get<Interfaces.ISecureStorage>();
             var result = await secureStorage.SetPropertyAsync(UsernameStoreFieldName, username);
@@ -82,12 +82,12 @@ namespace GamesViewer_Xamarin.Controllers
             return result;
         }
 
-        public static void SaveActiveUserId(int id)
+        public void SaveActiveUserId(int id)
         {
             Preferences.Set(ActiveUserId, id);
         }
 
-        public static async Task<Models.Usuario> GetUsuarioActivo()
+        public async Task<Models.Usuario> GetActiveUser()
         {
             int userId = Preferences.Get(ActiveUserId, -1);
             if (userId == -1)
@@ -97,10 +97,10 @@ namespace GamesViewer_Xamarin.Controllers
             return await usuarioDB.GetUser(userId);
         }
 
-        public static async Task<bool> HasFavorite(int juegoId, Models.Usuario usuarioActivo)
+        public async Task<bool> HasFavorite(int juegoId, Models.Usuario usuarioActivo)
         {
             if (usuarioActivo == null)
-                usuarioActivo = await GetUsuarioActivo();
+                usuarioActivo = await GetActiveUser();
             if (usuarioActivo == null)
                 return false;
 
@@ -109,18 +109,19 @@ namespace GamesViewer_Xamarin.Controllers
             return result != null;
         }
 
-        public static async void AddFavorite(Models.Juego juego)
+        public async void AddFavorite(Models.Juego juego)
         {
-            var usuarioActivo = await GetUsuarioActivo();
+            var usuarioActivo = await GetActiveUser();
             if (usuarioActivo == null)
                 return;
 
             if (await HasFavorite(juego.Id, usuarioActivo))
                 return;
 
-            var juegoFav = await JuegoController.GetJuegoFav(juego.Id);
+            var juegoService = new JuegoService();
+            var juegoFav = await juegoService.GetJuegoFav(juego.Id);
             if (juegoFav == null)
-                juegoFav = await JuegoController.InsertJuegoFav(juego);
+                juegoFav = await juegoService.InsertJuegoFav(juego);
             if (juegoFav == null)
                 return;
 
@@ -134,9 +135,9 @@ namespace GamesViewer_Xamarin.Controllers
             await userFavsDB.InsertJuegoFav(userJuego);
         }
 
-        public static async void RemoveFavorite(int juegoId)
+        public async void RemoveFavorite(int juegoId)
         {
-            var usuarioActivo = await GetUsuarioActivo();
+            var usuarioActivo = await GetActiveUser();
             if (usuarioActivo == null)
                 return;
 
@@ -153,9 +154,9 @@ namespace GamesViewer_Xamarin.Controllers
             await userFavsDB.DeleteByUserIdAndGameId(userJuego);
         }
 
-        public static async Task<List<Models.JuegoFav>> GetFavorites()
+        public async Task<List<Models.JuegoFav>> GetFavorites()
         {
-            var usuarioActivo = await GetUsuarioActivo();
+            var usuarioActivo = await GetActiveUser();
             if (usuarioActivo == null)
                 return null;
 
@@ -163,12 +164,33 @@ namespace GamesViewer_Xamarin.Controllers
             return await userFavsDB.GetJuegoFavsByUserId(usuarioActivo.Id);
         }
 
-        public static async Task DoLogout()
+        public void DoLogout()
         {
             Preferences.Remove(ActiveUserId);
             var secureStorage = DependencyService.Get<Interfaces.ISecureStorage>();
-            await secureStorage.SetPropertyAsync(UsernameStoreFieldName, null);
-            await secureStorage.SetPropertyAsync(PasswordStoreFieldname, null);
+            secureStorage.Remove(UsernameStoreFieldName);
+            secureStorage.Remove(PasswordStoreFieldname);
+        }
+
+        public async Task<Enums.UsuarioResultEnum> ChangePassword(string oldPass, string newPass)
+        {
+            var usuarioActivo = await GetActiveUser();
+            if (usuarioActivo == null)
+                return Enums.UsuarioResultEnum.UsernameNotFound;
+
+            var username = usuarioActivo.Username.ToUpper();
+            var oldHash = Util.HashPassword($"{username.ToUpper()}:{oldPass}");
+            var newHash = Util.HashPassword($"{username.ToUpper()}:{newPass}");
+            if (oldHash == newHash)
+                return Enums.UsuarioResultEnum.OldNewPasswordSame;
+
+            if (oldHash != usuarioActivo.ShaHashPass)
+                return Enums.UsuarioResultEnum.OldPasswordMismatch;
+
+            usuarioActivo.ShaHashPass = newHash;
+            var usuarioDB = DependencyService.Get<Interfaces.IUserDataService>();
+            await usuarioDB.UpdateUser(usuarioActivo);
+            return Enums.UsuarioResultEnum.Ok;
         }
     }
 }

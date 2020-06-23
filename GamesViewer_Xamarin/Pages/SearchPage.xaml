@@ -3,21 +3,41 @@
              xmlns:resources="clr-namespace:GamesViewer_Xamarin.Resx"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
+             xmlns:behaviors="clr-namespace:GamesViewer_Xamarin.Behaviors" xmlns:converters="clr-namespace:GamesViewer_Xamarin.Converters"
              Title="{Static resources:AppResources.SearchTitle}"
              IconImageSource="search.png">
+    <ContentPage.BindingContext>
+        <modelViews:SearchPageViewModel/>
+    </ContentPage.BindingContext>
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+        <converters:ItemAppearingEventConverter x:Key="ItemAppearingConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
     <StackLayout>
-        <SearchBar Placeholder="{Static resources:AppResources.InputGame}"
-                   SearchButtonPressed="SearchBar_SearchButtonPressed"
+        <SearchBar x:Name="searchBar"
+                   Placeholder="{Static resources:AppResources.InputGame}"
+                   SearchCommand="{Binding SearchCommand}"
+                   SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"
                    Keyboard="Plain"/>
-        <ListView ItemsSource="{Binding JuegosResult}"
+        <ListView x:Name="listView"
+                  ItemsSource="{Binding JuegosResult}"
                   RowHeight="95"
                   CachingStrategy="RecycleElement"
                   HasUnevenRows="False"
                   IsPullToRefreshEnabled="True"
+                  SelectedItem="{Binding SelectedGame, Mode=TwoWay}"
                   RefreshCommand="{Binding RefreshCommand}"
-                  IsRefreshing="{Binding IsRefreshing}"
-                  ItemAppearing="ListView_ItemAppearing"
-                  ItemSelected="ListView_ItemSelected">
+                  IsRefreshing="{Binding IsRefreshing}">
+            <ListView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="ItemAppearing"
+                                                  Command="{Binding ItemAppearingCommand}"
+                                                  Converter="{StaticResource ItemAppearingConverter}"/>
+            </ListView.Behaviors>
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

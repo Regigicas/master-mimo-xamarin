@@ -39,7 +39,7 @@ namespace GamesViewer_Xamarin.Services
 
         public async Task<Models.Usuario> GetUserByUsername(string username)
         {
-            return await connection.Table<Models.Usuario>().Where(u => u.Username == username).FirstOrDefaultAsync();
+            return await connection.Table<Models.Usuario>().Where(u => u.Username.ToUpper() == username.ToUpper()).FirstOrDefaultAsync();
         }
 
         public async Task<bool> InsertUser(Models.Usuario model)
@@ -60,7 +60,7 @@ namespace GamesViewer_Xamarin.Services
 
         public async Task<Models.Usuario> GetUserByEmail(string email)
         {
-            return await connection.Table<Models.Usuario>().Where(u => u.Email == email).FirstOrDefaultAsync();
+            return await connection.Table<Models.Usuario>().Where(u => u.Email.ToUpper() == email.ToUpper()).FirstOrDefaultAsync();
         }
     }
 }

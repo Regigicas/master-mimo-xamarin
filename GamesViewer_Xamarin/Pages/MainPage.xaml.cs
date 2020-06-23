@@ -13,7 +13,8 @@ namespace GamesViewer_Xamarin.Pages
 
         private async void TryAutoLogin()
         {
-            var autoLoginOk = await Controllers.UserController.TryAutoLogin();
+            var userService = new Services.UserService();
+            var autoLoginOk = await userService.TryAutoLogin();
             if (autoLoginOk)
             {
                 await Task.Delay(1000);

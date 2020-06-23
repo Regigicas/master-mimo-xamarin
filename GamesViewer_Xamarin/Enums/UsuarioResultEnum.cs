@@ -8,6 +8,7 @@
         UsernameNotFound,
         PasswordMismatch,
         OldNewPasswordSame,
+        OldPasswordMismatch,
         InternalError,
         Ok
     }
@@ -30,6 +31,8 @@
                     return Resx.AppResources.EnumPasswordMismatch;
                 case UsuarioResultEnum.OldNewPasswordSame:
                     return Resx.AppResources.EnumOldNewPasswordSame;
+                case UsuarioResultEnum.OldPasswordMismatch:
+                    return Resx.AppResources.EnumOldPasswordMistmatch;
                 case UsuarioResultEnum.InternalError:
                     return Resx.AppResources.EnumInternalError;
                 case UsuarioResultEnum.Ok:

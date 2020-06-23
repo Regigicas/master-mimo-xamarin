@@ -292,4 +292,40 @@
     <data name="Yes" xml:space="preserve">
         <value>Yes</value>
     </data>
+    
+    <data name="ChangePasswordTitle" xml:space="preserve">
+        <value>Change password</value>
+    </data>
+    
+    <data name="OldPassword" xml:space="preserve">
+        <value>Old password: </value>
+    </data>
+    
+    <data name="OldPasswordPlaceholder" xml:space="preserve">
+        <value>Old password</value>
+    </data>
+    
+    <data name="NewPassword" xml:space="preserve">
+        <value>New password: </value>
+    </data>
+    
+    <data name="NewPasswordPlaceholder" xml:space="preserve">
+        <value>New password</value>
+    </data>
+    
+    <data name="ChangePasswordWarning" xml:space="preserve">
+        <value>Changing the password will logout you, ¿Are you sure?</value>
+    </data>
+    
+    <data name="EnumOldPasswordMistmatch" xml:space="preserve">
+        <value>Old password doesn't match</value>
+    </data>
+    
+    <data name="HomeTitle" xml:space="preserve">
+        <value>Home</value>
+    </data>
+    
+    <data name="ScanQRTxt" xml:space="preserve">
+        <value>Scan QR</value>
+    </data>
 </root>

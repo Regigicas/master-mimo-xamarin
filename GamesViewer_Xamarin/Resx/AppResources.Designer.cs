@@ -460,5 +460,59 @@ namespace GamesViewer_Xamarin.Resx {
                 return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
+        
+        internal static string ChangePasswordTitle {
+            get {
+                return ResourceManager.GetString("ChangePasswordTitle", resourceCulture);
+            }
+        }
+        
+        internal static string OldPassword {
+            get {
+                return ResourceManager.GetString("OldPassword", resourceCulture);
+            }
+        }
+        
+        internal static string OldPasswordPlaceholder {
+            get {
+                return ResourceManager.GetString("OldPasswordPlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        internal static string NewPasswordPlaceholder {
+            get {
+                return ResourceManager.GetString("NewPasswordPlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string ChangePasswordWarning {
+            get {
+                return ResourceManager.GetString("ChangePasswordWarning", resourceCulture);
+            }
+        }
+        
+        internal static string EnumOldPasswordMistmatch {
+            get {
+                return ResourceManager.GetString("EnumOldPasswordMistmatch", resourceCulture);
+            }
+        }
+        
+        internal static string HomeTitle {
+            get {
+                return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        internal static string ScanQRTxt {
+            get {
+                return ResourceManager.GetString("ScanQRTxt", resourceCulture);
+            }
+        }
     }
 }

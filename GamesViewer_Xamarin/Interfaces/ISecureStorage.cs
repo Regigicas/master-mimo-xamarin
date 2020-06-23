@@ -7,5 +7,6 @@ namespace GamesViewer_Xamarin.Interfaces
     {
         Task<string> GetPropertyAsync(string key);
         Task<bool> SetPropertyAsync(string key, string value);
+        bool Remove(string key);
     }
 }

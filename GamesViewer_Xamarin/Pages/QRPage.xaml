@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GamesViewer_Xamarin.Pages.QRPage"
              xmlns:zx="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             xmlns:modelViews="clr-namespace:GamesViewer_Xamarin.ViewModels"
              Title="{Binding Juego.Name}">
+    <ContentPage.BindingContext>
+        <modelViews:QRPageViewModel/>
+    </ContentPage.BindingContext>
+
     <AbsoluteLayout>
         <zx:ZXingBarcodeImageView BarcodeFormat="QR_CODE"
                                   AutomationId="zxingBarcodeImageView"
