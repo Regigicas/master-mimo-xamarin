@@ -13,17 +13,18 @@ namespace GamesViewer_Xamarin.Pages
 
         private async void TryAutoLogin()
         {
+            var navService = new Services.NavigationService();
             var userService = new Services.UserService();
             var autoLoginOk = await userService.TryAutoLogin();
             if (autoLoginOk)
             {
                 await Task.Delay(1000);
-                Application.Current.MainPage = new NavigationPage(new HomePage());
+                navService.GoToHome();
                 return;
             }
 
             await Task.Delay(1000);
-            Application.Current.MainPage = new NavigationPage(new LoginPage());
+            navService.GoToLogin();
         }
     }
 }

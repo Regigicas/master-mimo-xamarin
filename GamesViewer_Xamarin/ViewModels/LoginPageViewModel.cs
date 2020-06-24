@@ -40,7 +40,6 @@ namespace GamesViewer_Xamarin.ViewModels
         private bool BlockLogin { get; set; }
         public Command LoginCommand { get; private set; }
         public ICommand RegisterCommand { get; private set; }
-        public ICommand TextChangeCommand { get; private set; }
 
         public LoginPageViewModel()
         {
